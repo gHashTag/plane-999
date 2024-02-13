@@ -21,7 +21,7 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
-  output: "standalone",
+  output: process.env.NEXT_OUTPUT_TYPE || "standalone",
 };
 
 if (parseInt(process.env.NEXT_PUBLIC_ENABLE_SENTRY || "0")) {
