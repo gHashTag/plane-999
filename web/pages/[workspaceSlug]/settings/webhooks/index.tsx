@@ -63,7 +63,7 @@ const WebhooksListPage: NextPageWithLayout = observer(() => {
   if (!webhooks) return <WebhookSettingsLoader />;
 
   return (
-    <div className="h-full w-full overflow-hidden py-8 pr-9">
+    <div className="h-full w-full overflow-hidden py-8">
       <CreateWebhookModal
         createWebhook={createWebhook}
         clearSecretKey={clearSecretKey}
