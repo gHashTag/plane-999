@@ -60,11 +60,11 @@ export const ProjectSettingLayout: FC<IProjectSettingLayout> = observer((props) 
           </div>
         ))}
       </div>
-      <div className="inset-y-0 z-20 flex flex-grow-0 h-full w-full gap-2 overflow-x-hidden overflow-y-scroll">
+      <div className="inset-y-0 z-20 flex flex-grow-0 h-full w-full gap-2">
         <div className="w-80 flex-shrink-0 overflow-y-hidden pt-8 sm:hidden hidden md:block lg:block">
           <ProjectSettingsSidebar />
         </div>
-        <div className="w-full px-4 md:pr-10">{children}</div>
+          <div className="w-full px-4 md:pr-10 overflow-x-hidden overflow-y-scroll">{children}</div>
       </div>
     </div>
   );

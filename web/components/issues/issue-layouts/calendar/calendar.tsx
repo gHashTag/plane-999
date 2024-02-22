@@ -4,7 +4,6 @@ import { useIssues, useUser } from "hooks/store";
 // components
 import {
   CalendarHeader,
-  CalendarIssueBlocks,
   CalendarQuickAddIssueForm,
   CalendarWeekDays,
   CalendarWeekHeader,
@@ -89,7 +88,7 @@ export const CalendarChart: React.FC<Props> = observer((props) => {
       <div className="flex h-full w-full flex-col overflow-auto md:overflow-hidden">
         <CalendarHeader setSelectedDate={setSelectedDate} issuesFilterStore={issuesFilterStore} viewId={viewId} />
         <CalendarWeekHeader isLoading={!issues} showWeekends={showWeekends} />
-        <div className="md:h-full w-full md:overflow-y-auto">
+        <div className="md:h-full w-full md:overflow-y-auto vertical-scrollbar scrollbar-lg">
           {layout === "month" && (
             <div className="grid h-full w-full grid-cols-1 divide-y-[0.5px] divide-custom-border-200">
               {allWeeksOfActiveMonth &&

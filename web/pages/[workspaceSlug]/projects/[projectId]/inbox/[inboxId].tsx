@@ -8,6 +8,7 @@ import useSize from "hooks/use-window-size";
 // layouts
 import { AppLayout } from "layouts/app-layout";
 // components
+import { PageHead } from "components/core";
 import { ProjectInboxHeader } from "components/headers";
 import { InboxSidebarRoot, InboxContentRoot, MobileInboxIssuesActionHeader } from "components/inbox";
 // types
@@ -39,9 +40,14 @@ const ProjectInboxPage: NextPageWithLayout = observer(() => {
       }
     }
   );
+  // derived values
+  const pageTitle = currentProjectDetails?.name ? `${currentProjectDetails?.name} - Inbox` : undefined;
 
   if (!workspaceSlug || !projectId || !inboxId || !currentProjectDetails?.inbox_view) return <></>;
+
   return (
+    <>
+      <PageHead title={pageTitle} />
     <div className="relative flex flex-col h-full overflow-hidden">
       <div className="md:hidden h-[50px] flex-shrink-0 w-full border-b border-custom-border-200">
         <MobileInboxIssuesActionHeader
@@ -78,6 +84,7 @@ const ProjectInboxPage: NextPageWithLayout = observer(() => {
         </div>
       </div>
     </div>
+    </>
   );
 });
 

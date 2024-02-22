@@ -159,7 +159,7 @@ export const AllIssueLayoutRoot: React.FC = observer(() => {
         globalViewId.toString()
       );
     },
-    [updateFilters, workspaceSlug]
+    [updateFilters, workspaceSlug, globalViewId]
   );
 
   const renderQuickActions = useCallback(
@@ -183,7 +183,7 @@ export const AllIssueLayoutRoot: React.FC = observer(() => {
 
   return (
     <div className="relative flex h-full w-full flex-col overflow-hidden">
-      <div className="relative h-full w-full overflow-auto">
+      <div className="relative h-full w-full flex flex-col">
         <GlobalViewsAppliedFiltersRoot globalViewId={globalViewId} />
         {issueIds.length === 0 ? (
           <EmptyState
