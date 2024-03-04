@@ -24,9 +24,9 @@ export const IssueBlock: React.FC<IssueBlockProps> = observer((props: IssueBlock
   const { issuesMap, issueId, handleIssues, quickActions, displayProperties, canEditProperties } = props;
   // hooks
   const {
-    router: { workspaceSlug, projectId },
+    router: { workspaceSlug },
   } = useApplication();
-  const { getProjectById } = useProject();
+  const { getProjectIdentifierById } = useProject();
   const { peekIssue, setPeekIssue } = useIssueDetail();
 
   const updateIssue = async (issueToUpdate: TIssue) => {
@@ -45,57 +45,56 @@ export const IssueBlock: React.FC<IssueBlockProps> = observer((props: IssueBlock
   if (!issue) return null;
 
   const canEditIssueProperties = canEditProperties(issue.project_id);
-  const projectDetails = getProjectById(issue.project_id);
+  const projectIdentifier = getProjectIdentifierById(issue.project_id);
 
   return (
     <div
-      className={cn("min-h-12 relative flex flex-col md:flex-row md:items-center gap-3 bg-custom-background-100 p-3 text-sm", {
+      className={cn("min-h-12 relative flex items-center gap-3 bg-custom-background-100 p-3 text-sm", {
         "border border-custom-primary-70 hover:border-custom-primary-70": peekIssue && peekIssue.issueId === issue.id,
         "last:border-b-transparent": peekIssue?.issueId !== issue.id,
       })}
     >
-      <div className="flex justify-between w-full">
-        <div className="flex items-center gap-3 w-full">
-          {displayProperties && displayProperties?.key && (
-            <div className="flex-shrink-0 text-xs font-medium text-custom-text-300">
-              {projectDetails?.identifier}-{issue.sequence_id}
-            </div>
-          )}
-          {issue?.tempId !== undefined && (
-            <div className="absolute left-0 top-0 z-[99999] h-full w-full animate-pulse bg-custom-background-100/20" />
-          )}
-          {issue?.is_draft ? (
-            <Tooltip tooltipHeading="Title" tooltipContent={issue.name}>
-              <span>{issue.name}</span>
-            </Tooltip>
-          ) : (
-            <ControlLink
-              href={`/${workspaceSlug}/projects/${projectId}/issues/${issueId}`}
-              target="_blank"
-              onClick={() => handleIssuePeekOverview(issue)}
-              className="w-full line-clamp-1 cursor-pointer text-sm text-custom-text-100"
-            >
-              <Tooltip tooltipHeading="Title" tooltipContent={issue.name}>
-                <span>{issue.name}</span>
-              </Tooltip>
-            </ControlLink>
-          )}
+      {displayProperties && displayProperties?.key && (
+        <div className="flex-shrink-0 text-xs font-medium text-custom-text-300">
+          {projectIdentifier}-{issue.sequence_id}
         </div>
-        {!issue?.tempId && <div className="block md:hidden border border-custom-border-300 rounded ">{quickActions(issue)}</div>}
-      </div>
+      )}
 
-      <div className="flex flex-wrap  md:flex-shrink-0 items-center gap-2">
+      {issue?.tempId !== undefined && (
+        <div className="absolute left-0 top-0 z-[99999] h-full w-full animate-pulse bg-custom-background-100/20" />
+      )}
+
+      {issue?.is_draft ? (
+        <Tooltip tooltipHeading="Title" tooltipContent={issue.name}>
+          <span>{issue.name}</span>
+        </Tooltip>
+      ) : (
+        <ControlLink
+          href={`/${workspaceSlug}/projects/${issue.project_id}/${issue.archived_at ? "archived-issues" : "issues"}/${issue.id
+            }`}
+          target="_blank"
+          onClick={() => handleIssuePeekOverview(issue)}
+          className="w-full line-clamp-1 cursor-pointer text-sm text-custom-text-100"
+          disabled={!!issue?.tempId}
+        >
+          <Tooltip tooltipHeading="Title" tooltipContent={issue.name}>
+            <span>{issue.name}</span>
+          </Tooltip>
+        </ControlLink>
+      )}
+
+      <div className="ml-auto flex flex-shrink-0 items-center gap-2">
         {!issue?.tempId ? (
           <>
             <IssueProperties
-              className="relative flex flex-wrap md:flex-grow md:flex-shrink-0 items-center gap-2 whitespace-nowrap"
+              className="relative flex items-center gap-2 whitespace-nowrap"
               issue={issue}
               isReadOnly={!canEditIssueProperties}
               handleIssues={updateIssue}
               displayProperties={displayProperties}
               activeLayout="List"
             />
-            <div className="hidden md:block">{quickActions(issue)}</div>
+            {quickActions(issue)}
           </>
         ) : (
           <div className="h-4 w-4">

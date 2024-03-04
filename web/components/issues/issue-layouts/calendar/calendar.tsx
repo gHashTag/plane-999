@@ -87,66 +87,66 @@ export const CalendarChart: React.FC<Props> = observer((props) => {
     <>
       <div className="flex h-full w-full flex-col overflow-auto md:overflow-hidden">
         <CalendarHeader setSelectedDate={setSelectedDate} issuesFilterStore={issuesFilterStore} viewId={viewId} />
-        <CalendarWeekHeader isLoading={!issues} showWeekends={showWeekends} />
-        <div className="md:h-full w-full md:overflow-y-auto vertical-scrollbar scrollbar-lg">
-          {layout === "month" && (
-            <div className="grid h-full w-full grid-cols-1 divide-y-[0.5px] divide-custom-border-200">
-              {allWeeksOfActiveMonth &&
-                Object.values(allWeeksOfActiveMonth).map((week: ICalendarWeek, weekIndex) => (
-                  <CalendarWeekDays
-                    selectedDate={selectedDate}
-                    setSelectedDate={setSelectedDate}
-                    issuesFilterStore={issuesFilterStore}
-                    key={weekIndex}
-                    week={week}
-                    issues={issues}
-                    groupedIssueIds={groupedIssueIds}
-                    enableQuickIssueCreate
-                    disableIssueCreation={!enableIssueCreation || !isEditingAllowed}
-                    quickActions={quickActions}
-                    quickAddCallback={quickAddCallback}
-                    viewId={viewId}
-                    readOnly={readOnly}
-                  />
-                ))}
-            </div>
-          )}
-          {layout === "week" && (
-            <CalendarWeekDays
-              selectedDate={selectedDate}
-              setSelectedDate={setSelectedDate}
-              issuesFilterStore={issuesFilterStore}
-              week={issueCalendarView.allDaysOfActiveWeek}
-              issues={issues}
-              groupedIssueIds={groupedIssueIds}
-              enableQuickIssueCreate
-              disableIssueCreation={!enableIssueCreation || !isEditingAllowed}
-              quickActions={quickActions}
-              quickAddCallback={quickAddCallback}
-              viewId={viewId}
-              readOnly={readOnly}
-            />
-          )}
+        <div className="flex h-full w-full vertical-scrollbar scrollbar-lg flex-col">
+          <CalendarWeekHeader isLoading={!issues} showWeekends={showWeekends} />
+          <div className="md:h-full w-full md:overflow-y-auto vertical-scrollbar scrollbar-lg">
+            {layout === "month" && (
+              <div className="grid h-full w-full grid-cols-1 divide-y-[0.5px] divide-custom-border-200">
+                {allWeeksOfActiveMonth &&
+                  Object.values(allWeeksOfActiveMonth).map((week: ICalendarWeek, weekIndex) => (
+                    <CalendarWeekDays
+                      selectedDate={selectedDate}
+                      setSelectedDate={setSelectedDate}
+                      issuesFilterStore={issuesFilterStore}
+                      key={weekIndex}
+                      week={week}
+                      issues={issues}
+                      groupedIssueIds={groupedIssueIds}
+                      enableQuickIssueCreate
+                      disableIssueCreation={!enableIssueCreation || !isEditingAllowed}
+                      quickActions={quickActions}
+                      quickAddCallback={quickAddCallback}
+                      viewId={viewId}
+                      readOnly={readOnly}
+                    />
+                  ))}
+              </div>
+            )}
+            {layout === "week" && (
+              <CalendarWeekDays
+                selectedDate={selectedDate}
+                setSelectedDate={setSelectedDate}
+                issuesFilterStore={issuesFilterStore}
+                week={issueCalendarView.allDaysOfActiveWeek}
+                issues={issues}
+                groupedIssueIds={groupedIssueIds}
+                enableQuickIssueCreate
+                disableIssueCreation={!enableIssueCreation || !isEditingAllowed}
+                quickActions={quickActions}
+                quickAddCallback={quickAddCallback}
+                viewId={viewId}
+                readOnly={readOnly}
+              />
+            )}
+          </div>
+          <div className="md:hidden">
+            <p className="p-4 text-xl font-semibold">
+              {`${selectedDate.getDate()} ${MONTHS_LIST[selectedDate.getMonth() + 1].title
+                }, ${selectedDate.getFullYear()}`}
+            </p>
+            {issueIdList &&
+              issueIdList?.length > 0 &&
+              issueIdList?.map((issueId) => {
+                if (!issues?.[issueId]) return null;
+                const issue = issues?.[issueId];
+                return (
+                  <div className="border-b border-custom-border-200 px-4">
+                    <CalendarIssueBlock issue={issue} quickActions={quickActions} />
+                  </div>
+                );
+              })}
+          </div>
         </div>
-        <div className="md:hidden">
-          <p className="p-4 text-xl font-semibold">
-            {`${selectedDate.getDate()} ${
-              MONTHS_LIST[selectedDate.getMonth() + 1].title
-            }, ${selectedDate.getFullYear()}`}
-          </p>
-          {issueIdList &&
-            issueIdList?.length > 0 &&
-            issueIdList?.map((issueId) => {
-              if (!issues?.[issueId]) return null;
-              const issue = issues?.[issueId];
-              return (
-                <div className="border-b border-custom-border-200 px-4">
-                  <CalendarIssueBlock issue={issue} quickActions={quickActions} />
-                </div>
-              );
-            })}
-        </div>
-
         {enableIssueCreation && isEditingAllowed && !readOnly && (
           <div className="px-2 border-b border-custom-border-200 !h-10 mb-5 flex items-center md:hidden">
             <CalendarQuickAddIssueForm

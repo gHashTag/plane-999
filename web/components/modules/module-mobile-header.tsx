@@ -158,6 +158,7 @@ export const ModuleMobileHeader = observer(() => {
               handleDisplayFiltersUpdate={handleDisplayFilters}
               displayProperties={issueFilters?.displayProperties ?? {}}
               handleDisplayPropertiesUpdate={handleDisplayProperties}
+              ignoreGroupedFilters={["module"]}
             />
           </FiltersDropdown>
         </div>

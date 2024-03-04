@@ -1,6 +1,15 @@
 import { observer } from "mobx-react-lite";
 // hooks
-import { useIssueDetail, useKanbanView, useLabel, useMember, useProject, useProjectState } from "hooks/store";
+import {
+  useCycle,
+  useIssueDetail,
+  useKanbanView,
+  useLabel,
+  useMember,
+  useModule,
+  useProject,
+  useProjectState,
+} from "hooks/store";
 // components
 import { HeaderGroupByCard } from "./headers/group-by-card";
 import { KanbanGroup } from "./kanban-group";
@@ -79,24 +88,33 @@ const GroupByKanBan: React.FC<IGroupByKanBan> = observer((props) => {
   const member = useMember();
   const project = useProject();
   const label = useLabel();
+  const cycle = useCycle();
+  const _module = useModule();
   const projectState = useProjectState();
   const { peekIssue } = useIssueDetail();
 
-  const list = getGroupByColumns(group_by as GroupByColumnTypes, project, label, projectState, member);
+  const list = getGroupByColumns(group_by as GroupByColumnTypes, project, cycle, _module, label, projectState, member);
 
   if (!list) return null;
 
-  const groupWithIssues = list.filter((_list) => (issueIds as TGroupedIssues)[_list.id]?.length > 0);
+  const groupWithIssues = list.filter((_list) => (issueIds as TGroupedIssues)?.[_list.id]?.length > 0);
 
   const groupList = showEmptyGroup ? list : groupWithIssues;
 
-  const visibilityGroupBy = (_list: IGroupByColumn) =>
-    sub_group_by ? false : kanbanFilters?.group_by.includes(_list.id) ? true : false;
+  const visibilityGroupBy = (_list: IGroupByColumn) => {
+    if (sub_group_by) {
+      if (kanbanFilters?.sub_group_by.includes(_list.id)) return true;
+      return false;
+    } else {
+      if (kanbanFilters?.group_by.includes(_list.id)) return true;
+      return false;
+    }
+  };
 
   const isGroupByCreatedBy = group_by === "created_by";
 
   return (
-    <div className={`relative w-full flex gap-3 ${sub_group_by ? "h-full" : "h-full"}`}>
+    <div className={`relative w-full flex gap-2 ${sub_group_by ? "h-full" : "h-full"}`}>
       {groupList &&
         groupList.length > 0 &&
         groupList.map((_list: IGroupByColumn) => {

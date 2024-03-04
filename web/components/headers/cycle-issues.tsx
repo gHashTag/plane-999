@@ -171,7 +171,12 @@ export const CycleIssuesHeader: React.FC = observer(() => {
                       }
                     />
                   </span>
-                  <Link href={`/${workspaceSlug}/projects/${currentProjectDetails?.id}/issues`} className="block md:hidden pl-2 text-custom-text-300">...</Link>
+                  <Link
+                    href={`/${workspaceSlug}/projects/${currentProjectDetails?.id}/issues`}
+                    className="block md:hidden pl-2 text-custom-text-300"
+                  >
+                    ...
+                  </Link>
                 </span>
               }
             />
@@ -274,5 +279,3 @@ export const CycleIssuesHeader: React.FC = observer(() => {
     </>
   );
 });
-
-
