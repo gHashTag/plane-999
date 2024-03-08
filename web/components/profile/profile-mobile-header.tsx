@@ -115,8 +115,9 @@ export const ProfileMobileHeader = observer(() => {
             customButtonClassName="flex flex-grow justify-center text-custom-text-200 text-sm"
             closeOnSelect
           >
-            {ISSUE_LAYOUTS.filter((l) => layouts.includes(l.key)).map((layout) => (
+            {ISSUE_LAYOUTS.filter((l) => layouts.includes(l.key)).map((layout, index) => (
               <CustomMenu.MenuItem
+              key={index}
                 onClick={() => {
                   handleLayoutChange(layout.key);
                 }}

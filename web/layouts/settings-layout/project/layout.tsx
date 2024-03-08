@@ -1,16 +1,16 @@
 import { FC, ReactNode } from "react";
-import { useRouter } from "next/router";
 import { observer } from "mobx-react-lite";
 import Link from "next/link";
+import { useRouter } from "next/router";
 // hooks
-import { useUser } from "hooks/store";
 // components
-import { ProjectSettingsSidebar } from "./sidebar";
+import { Button, LayersIcon } from "@plane/ui";
 import { NotAuthorizedView } from "components/auth-screens";
 // ui
-import { Button, LayersIcon } from "@plane/ui";
 // constants
 import { EUserProjectRoles, PROJECT_SETTINGS_LINKS } from "constants/project";
+import { useUser } from "hooks/store";
+import { ProjectSettingsSidebar } from "./sidebar";
 import { cn } from "helpers/common.helper";
 
 export interface IProjectSettingLayout {
@@ -44,8 +44,9 @@ export const ProjectSettingLayout: FC<IProjectSettingLayout> = observer((props) 
   ) : (
     <div>
       <div className="sticky flex md:hidden overflow-x-scroll mt-4 self-center z-10 bg-custom-background-100 border-b border-custom-border-200 top-0">
-        {PROJECT_SETTINGS_LINKS.map((link) => (
+        {PROJECT_SETTINGS_LINKS.map((link, index) => (
           <div
+          key={index}
             onClick={() => router.push(`/${workspaceSlug}/projects/${projectId}${link.href}`)}
             className={cn(
               "px-4 pb-4",
@@ -64,7 +65,7 @@ export const ProjectSettingLayout: FC<IProjectSettingLayout> = observer((props) 
         <div className="w-80 flex-shrink-0 overflow-y-hidden pt-8 sm:hidden hidden md:block lg:block">
           <ProjectSettingsSidebar />
         </div>
-          <div className="w-full px-4 md:pr-10 overflow-x-hidden overflow-y-scroll">{children}</div>
+          <div className="w-full px-4 md:pr-10 overflow-x-hidden overflow-y-scroll vertical-scrollbar scrollbar-md">{children}</div>
       </div>
     </div>
   );

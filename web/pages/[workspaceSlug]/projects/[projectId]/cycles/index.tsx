@@ -1,41 +1,33 @@
 import { Fragment, useCallback, useState, ReactElement } from "react";
-import { useRouter } from "next/router";
 import { observer } from "mobx-react-lite";
+import { useRouter } from "next/router";
 import { Tab } from "@headlessui/react";
-import { useTheme } from "next-themes";
 // hooks
-import { useEventTracker, useCycle, useUser, useProject } from "hooks/store";
+import { useEventTracker, useCycle, useProject } from "hooks/store";
 import useLocalStorage from "hooks/use-local-storage";
+import useSize from "hooks/use-window-size";
 // layouts
 import { AppLayout } from "layouts/app-layout";
 // components
 import { PageHead } from "components/core";
 import { CyclesHeader } from "components/headers";
 import { CyclesView, ActiveCycleDetails, CycleCreateUpdateModal } from "components/cycles";
-import { EmptyState, getEmptyStateImagePath } from "components/empty-state";
+import { EmptyState } from "components/empty-state";
+import { CycleModuleBoardLayout, CycleModuleListLayout, GanttLayoutLoader } from "components/ui";
 // ui
 import { Tooltip } from "@plane/ui";
-import { CycleModuleBoardLayout, CycleModuleListLayout, GanttLayoutLoader } from "components/ui";
 // types
-import { TCycleView, TCycleLayout } from "@plane/types";
 import { NextPageWithLayout } from "lib/types";
+import { TCycleView, TCycleLayout } from "@plane/types";
 // constants
 import { CYCLE_TAB_LIST, CYCLE_VIEW_LAYOUTS } from "constants/cycle";
-import { EUserWorkspaceRoles } from "constants/workspace";
+import { EmptyStateType } from "constants/empty-state";
 import { CyclesListMobileHeader } from "components/cycles/cycles-list-mobile-header";
-import { CYCLE_EMPTY_STATE_DETAILS } from "constants/empty-state";
-import useSize from "hooks/use-window-size";
 
 const ProjectCyclesPage: NextPageWithLayout = observer(() => {
   const [createModal, setCreateModal] = useState(false);
-  // theme
-  const { resolvedTheme } = useTheme();
   // store hooks
   const { setTrackElement } = useEventTracker();
-  const {
-    membership: { currentProjectRole },
-    currentUser,
-  } = useUser();
   const { currentProjectCycleIds, loader } = useCycle();
   const { windowWidth } = useSize();
   const { getProjectById } = useProject();
@@ -46,10 +38,7 @@ const ProjectCyclesPage: NextPageWithLayout = observer(() => {
   const { storedValue: cycleTab, setValue: setCycleTab } = useLocalStorage<TCycleView>("cycle_tab", "active");
   const { storedValue: cycleLayout, setValue: setCycleLayout } = useLocalStorage<TCycleLayout>("cycle_layout", "list");
   // derived values
-  const isLightMode = resolvedTheme ? resolvedTheme === "light" : currentUser?.theme.theme === "light";
-  const EmptyStateImagePath = getEmptyStateImagePath("onboarding", "cycles", isLightMode);
   const totalCycles = currentProjectCycleIds?.length ?? 0;
-  const isEditingAllowed = !!currentProjectRole && currentProjectRole >= EUserWorkspaceRoles.MEMBER;
   const project = projectId ? getProjectById(projectId?.toString()) : undefined;
   const pageTitle = project?.name ? `${project?.name} - Cycles` : undefined;
 
@@ -92,22 +81,11 @@ const ProjectCyclesPage: NextPageWithLayout = observer(() => {
         {totalCycles === 0 ? (
           <div className="h-full place-items-center">
             <EmptyState
-              title={CYCLE_EMPTY_STATE_DETAILS["cycles"].title}
-              description={CYCLE_EMPTY_STATE_DETAILS["cycles"].description}
-              image={EmptyStateImagePath}
-              comicBox={{
-                title: CYCLE_EMPTY_STATE_DETAILS["cycles"].comicBox.title,
-                description: CYCLE_EMPTY_STATE_DETAILS["cycles"].comicBox.description,
+              type={EmptyStateType.PROJECT_CYCLES}
+              primaryButtonOnClick={() => {
+                setTrackElement("Cycle empty state");
+                setCreateModal(true);
               }}
-              primaryButton={{
-                text: CYCLE_EMPTY_STATE_DETAILS["cycles"].primaryButton.text,
-                onClick: () => {
-                  setTrackElement("Cycle empty state");
-                  setCreateModal(true);
-                },
-              }}
-              size="lg"
-              disabled={!isEditingAllowed}
             />
           </div>
         ) : (

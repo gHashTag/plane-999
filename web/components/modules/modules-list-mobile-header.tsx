@@ -25,10 +25,11 @@ export const ModulesListMobileHeader = observer(() => {
             customButtonClassName="flex flex-grow justify-center items-center text-custom-text-200 text-sm"
             closeOnSelect
         >
-            {MODULE_VIEW_LAYOUTS.map((layout) => {
+            {MODULE_VIEW_LAYOUTS.map((layout, index) => {
                 if (layout.key === 'gantt_chart') return null;
                 return (
                     <CustomMenu.MenuItem
+                    key={index}
                         onClick={() => setModulesView(layout.key)}
                         className="flex items-center gap-2"
                     >

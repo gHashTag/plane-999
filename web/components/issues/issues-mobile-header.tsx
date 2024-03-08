@@ -2,17 +2,17 @@ import { useCallback, useState } from "react";
 import { observer } from "mobx-react-lite";
 import router from "next/router";
 // components
+import { Calendar, ChevronDown, Kanban, List, Sheet } from "lucide-react";
 import { CustomMenu } from "@plane/ui";
 // icons
-import { Calendar, ChevronDown, Kanban, List, Sheet } from "lucide-react";
 // constants
+import { ProjectAnalyticsModal } from "components/analytics";
 import { EIssueFilterType, EIssuesStoreType, ISSUE_DISPLAY_FILTERS_BY_LAYOUT, ISSUE_LAYOUTS } from "constants/issue";
 // hooks
 import { useIssues, useLabel, useMember, useProject, useProjectState } from "hooks/store";
 // layouts
-import { DisplayFiltersSelection, FilterSelection, FiltersDropdown } from "./issue-layouts";
 import { IIssueDisplayFilterOptions, IIssueDisplayProperties, IIssueFilterOptions, TIssueLayouts } from "@plane/types";
-import { ProjectAnalyticsModal } from "components/analytics";
+import { DisplayFiltersSelection, FilterSelection, FiltersDropdown } from "./issue-layouts";
 
 export const IssuesMobileHeader = observer(() => {
   const layouts = [
@@ -97,30 +97,34 @@ export const IssuesMobileHeader = observer(() => {
           maxHeight={"md"}
           className="flex flex-grow justify-center text-custom-text-200 text-sm"
           placement="bottom-start"
-          customButton={<span className="flex flex-grow justify-center text-custom-text-200 text-sm">Layout</span>}
+          customButton={<span className="flex flex-grow items-center justify-center text-custom-text-200 text-sm">
+            {showCurrentIcon != undefined && <showCurrentIcon.icon className="w-3.5 h-3.5 mr-2" />}
+            Layout
+          </span>}
           customButtonClassName="flex flex-grow justify-center text-custom-text-200 text-sm"
           closeOnSelect
         >
           {layouts.map((layout, index) => (
             <CustomMenu.MenuItem
+              key={index}
               onClick={() => {
                 handleLayoutChange(ISSUE_LAYOUTS[index].key);
               }}
               className="flex items-center gap-2"
             >
-              <layout.icon className="w-3 h-3" />
+              <layout.icon className="h-3 w-3" />
               <div className="text-custom-text-300">{layout.title}</div>
             </CustomMenu.MenuItem>
           ))}
         </CustomMenu>
-        <div className="flex flex-grow justify-center border-l border-custom-border-200 items-center text-custom-text-200 text-sm">
+        <div className="flex flex-grow items-center justify-center border-l border-custom-border-200 text-sm text-custom-text-200">
           <FiltersDropdown
             title="Filters"
             placement="bottom-end"
             menuButton={
-              <span className="flex items-center text-custom-text-200 text-sm">
+              <span className="flex items-center text-sm text-custom-text-200">
                 Filters
-                <ChevronDown className="text-custom-text-200  h-4 w-4 ml-2" />
+                <ChevronDown className="ml-2  h-4 w-4 text-custom-text-200" />
               </span>
             }
           >
@@ -134,85 +138,37 @@ export const IssuesMobileHeader = observer(() => {
               memberIds={projectMemberIds ?? undefined}
               states={projectStates}
             />
-            <div className="flex justify-evenly py-2 border-b border-custom-border-200 md:hidden">
-              <CustomMenu
-                maxHeight={"md"}
-                className="flex flex-grow justify-center text-custom-text-200 text-sm"
-                placement="bottom-start"
-                customButton={<span className="flex flex-grow items-center justify-center text-custom-text-200 text-sm">
-                  {showCurrentIcon != undefined && <showCurrentIcon.icon className="w-3.5 h-3.5 mr-2" />}
-                  Layout
-                </span>}
-                customButtonClassName="flex flex-grow justify-center text-custom-text-200 text-sm"
-                closeOnSelect
-              >
-                {layouts.map((layout, index) => (
-                  <CustomMenu.MenuItem
-                    onClick={() => {
-                      handleLayoutChange(ISSUE_LAYOUTS[index].key);
-                    }}
-                    className="flex items-center gap-2"
-                  >
-                    <layout.icon className="w-3 h-3" />
-                    <div className="text-custom-text-300">{layout.title}</div>
-                  </CustomMenu.MenuItem>
-                ))}
-              </CustomMenu>
-              <div className="flex flex-grow justify-center border-l border-custom-border-200 items-center text-custom-text-200 text-sm">
-                <FiltersDropdown
-                  title="Filters"
-                  placement="bottom-end"
-                  menuButton={
-                    <span className="flex items-center text-custom-text-200 text-sm">
-                      Filters
-                      <ChevronDown className="text-custom-text-200  h-4 w-4 ml-2" />
-                    </span>
-                  }
-                >
-                  <FilterSelection
-                    filters={issueFilters?.filters ?? {}}
-                    handleFiltersUpdate={handleFiltersUpdate}
-                    layoutDisplayFiltersOptions={
-                      activeLayout ? ISSUE_DISPLAY_FILTERS_BY_LAYOUT.issues[activeLayout] : undefined
-                    }
-                    labels={projectLabels}
-                    memberIds={projectMemberIds ?? undefined}
-                    states={projectStates}
-                  />
-                </FiltersDropdown>
-              </div>
-              <div className="flex flex-grow justify-center border-l border-custom-border-200 items-center text-custom-text-200 text-sm">
-                <FiltersDropdown
-                  title="Display"
-                  placement="bottom-end"
-                  menuButton={
-                    <span className="flex items-center text-custom-text-200 text-sm">
-                      Display
-                      <ChevronDown className="text-custom-text-200 h-4 w-4 ml-2" />
-                    </span>
-                  }
-                >
-                  <DisplayFiltersSelection
-                    layoutDisplayFiltersOptions={
-                      activeLayout ? ISSUE_DISPLAY_FILTERS_BY_LAYOUT.issues[activeLayout] : undefined
-                    }
-                    displayFilters={issueFilters?.displayFilters ?? {}}
-                    handleDisplayFiltersUpdate={handleDisplayFilters}
-                    displayProperties={issueFilters?.displayProperties ?? {}}
-                    handleDisplayPropertiesUpdate={handleDisplayProperties}
-                  />
-                </FiltersDropdown>
-              </div>
-
-              <button
-                onClick={() => setAnalyticsModal(true)}
-                className="flex flex-grow justify-center text-custom-text-200 text-sm border-l border-custom-border-200"
-              >
-                Analytics
-              </button>
-            </div>
           </FiltersDropdown>
         </div>
+        <div className="flex flex-grow items-center justify-center border-l border-custom-border-200 text-sm text-custom-text-200">
+          <FiltersDropdown
+            title="Display"
+            placement="bottom-end"
+            menuButton={
+              <span className="flex items-center text-sm text-custom-text-200">
+                Display
+                <ChevronDown className="ml-2 h-4 w-4 text-custom-text-200" />
+              </span>
+            }
+          >
+            <DisplayFiltersSelection
+              layoutDisplayFiltersOptions={
+                activeLayout ? ISSUE_DISPLAY_FILTERS_BY_LAYOUT.issues[activeLayout] : undefined
+              }
+              displayFilters={issueFilters?.displayFilters ?? {}}
+              handleDisplayFiltersUpdate={handleDisplayFilters}
+              displayProperties={issueFilters?.displayProperties ?? {}}
+              handleDisplayPropertiesUpdate={handleDisplayProperties}
+            />
+          </FiltersDropdown>
+        </div>
+
+        <button
+          onClick={() => setAnalyticsModal(true)}
+          className="flex flex-grow justify-center border-l border-custom-border-200 text-sm text-custom-text-200"
+        >
+          Analytics
+        </button>
       </div>
     </>)
 });

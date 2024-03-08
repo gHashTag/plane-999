@@ -1,12 +1,12 @@
 import { ReactElement } from "react";
-import { useRouter } from "next/router";
 import { observer } from "mobx-react";
+import { useRouter } from "next/router";
 // layouts
 import { AppLayout } from "layouts/app-layout";
 // components
 import { PageHead } from "components/core";
-import { ModulesListView } from "components/modules";
 import { ModulesListHeader } from "components/headers";
+import { ModulesListView } from "components/modules";
 import { ModulesListMobileHeader } from "components/modules/modules-list-mobile-header";
 // types
 import { NextPageWithLayout } from "lib/types";

@@ -15,13 +15,14 @@ export const WorkspaceSettingLayout: FC<IWorkspaceSettingLayout> = (props) => {
   const { children } = props;
   // router
   const router = useRouter();
-  const { workspaceSlug, projectId } = router.query;
+  const { workspaceSlug } = router.query;
 
   return (
     <div>
       <div className="w-full sticky flex md:hidden overflow-x-scroll z-10 bg-custom-background-100 border-b border-custom-border-200 top-0">
-        {WORKSPACE_SETTINGS_LINKS.map((link) => (
+        {WORKSPACE_SETTINGS_LINKS.map((link, index) => (
           <div
+          key={index}
             onClick={() => router.push(`/${workspaceSlug}${link.href}`)}
             className={cn(
               "h-full flex items-center px-4",
@@ -40,7 +41,7 @@ export const WorkspaceSettingLayout: FC<IWorkspaceSettingLayout> = (props) => {
         <div className="w-80 flex-shrink-0 overflow-y-hidden pt-8 sm:hidden hidden md:block lg:block">
           <WorkspaceSettingsSidebar />
         </div>
-        <div className="w-full px-4 md:pl-0 md:pr-9">{children}</div>
+        <div className="w-full px-5 sm:px-10 md:px-0 md:pr-10 lg:pr-10 overflow-x-hidden overflow-y-scroll vertical-scrollbar scrollbar-md">{children}</div>
       </div>
     </div>
   );

@@ -3,11 +3,10 @@ import React, { useEffect } from "react";
 // ui
 import { Tooltip } from "@plane/ui";
 // types
-import { TIssueLayouts } from "@plane/types";
-// constants
 import { ISSUE_LAYOUTS } from "constants/issue";
-// hooks
+import { TIssueLayouts } from "@plane/types";
 import useSize from "hooks/use-window-size";
+// constants
 
 type Props = {
   layouts: TIssueLayouts[];

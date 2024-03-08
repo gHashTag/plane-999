@@ -1,19 +1,18 @@
-import { useRouter } from "next/router";
 import { observer } from "mobx-react-lite";
+import { useRouter } from "next/router";
 // icons
 import { Plus } from "lucide-react";
-// hooks
-import { useApplication, useEventTracker, useProject, useUser } from "hooks/store";
-import useLocalStorage from "hooks/use-local-storage";
 // ui
 import { Breadcrumbs, Button, Tooltip, DiceIcon } from "@plane/ui";
-// helper
-import { renderEmoji } from "helpers/emoji.helper";
+// components
+import { BreadcrumbLink } from "components/common";
 // constants
 import { MODULE_VIEW_LAYOUTS } from "constants/module";
 import { EUserProjectRoles } from "constants/project";
-// components
-import { BreadcrumbLink } from "components/common";
+// hooks
+import { useApplication, useEventTracker, useProject, useUser } from "hooks/store";
+import useLocalStorage from "hooks/use-local-storage";
+import { ProjectLogo } from "components/project";
 
 export const ModulesListHeader: React.FC = observer(() => {
   // router
@@ -44,13 +43,9 @@ export const ModulesListHeader: React.FC = observer(() => {
                     href={`/${workspaceSlug}/projects/${currentProjectDetails?.id}/issues`}
                     label={currentProjectDetails?.name ?? "Project"}
                     icon={
-                      currentProjectDetails?.emoji ? (
-                        renderEmoji(currentProjectDetails.emoji)
-                      ) : currentProjectDetails?.icon_prop ? (
-                        renderEmoji(currentProjectDetails.icon_prop)
-                      ) : (
-                        <span className="grid h-7 w-7 flex-shrink-0 place-items-center rounded bg-gray-700 uppercase text-white">
-                          {currentProjectDetails?.name.charAt(0)}
+                      currentProjectDetails && (
+                        <span className="grid place-items-center flex-shrink-0 h-4 w-4">
+                          <ProjectLogo logo={currentProjectDetails?.logo_props} className="text-sm" />
                         </span>
                       )
                     }
@@ -101,4 +96,3 @@ export const ModulesListHeader: React.FC = observer(() => {
     </div>
   );
 });
-

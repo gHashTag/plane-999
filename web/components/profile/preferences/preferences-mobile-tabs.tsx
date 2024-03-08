@@ -19,13 +19,14 @@ export const PreferencesMobileTabs = () => {
     ];
 
   return (
-    <div className={cn("sticky top-0 flex md:hidden w-full border-b border-custom-border-200")}>
-      {profilePreferenceLinks.map((link) => (
+    <div className="sticky top-0 flex md:hidden w-full border-b border-custom-border-200">
+      {profilePreferenceLinks.map((link, index) => (
         <Link
+          key={index}
           href={link.href}
           onClick={() => console.log(router.asPath)}
           className={cn(
-            "flex justify-around py-1 w-full",
+            "flex justify-around py-2 w-full",
             router.asPath.includes(link.label.toLowerCase()) ? "border-b border-custom-primary" : ""
           )}
         >

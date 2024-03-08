@@ -1,15 +1,15 @@
-import { useRouter } from "next/router";
 import { observer } from "mobx-react-lite";
+import { useRouter } from "next/router";
 import { Plus } from "lucide-react";
 // hooks
-import { useApplication, useProject, useUser } from "hooks/store";
 // components
 import { Breadcrumbs, PhotoFilterIcon, Button } from "@plane/ui";
 import { BreadcrumbLink } from "components/common";
 // helpers
-import { renderEmoji } from "helpers/emoji.helper";
-// constants
 import { EUserProjectRoles } from "constants/project";
+// constants
+import { useApplication, useProject, useUser } from "hooks/store";
+import { ProjectLogo } from "components/project";
 
 export const ProjectViewsHeader: React.FC = observer(() => {
   // router
@@ -40,17 +40,9 @@ export const ProjectViewsHeader: React.FC = observer(() => {
                     href={`/${workspaceSlug}/projects/${currentProjectDetails?.id}/issues`}
                     label={currentProjectDetails?.name ?? "Project"}
                     icon={
-                      currentProjectDetails?.emoji ? (
-                        <span className="grid h-7 w-7 flex-shrink-0 place-items-center rounded uppercase">
-                          {renderEmoji(currentProjectDetails.emoji)}
-                        </span>
-                      ) : currentProjectDetails?.icon_prop ? (
-                        <div className="grid h-7 w-7 flex-shrink-0 place-items-center">
-                          {renderEmoji(currentProjectDetails.icon_prop)}
-                        </div>
-                      ) : (
-                        <span className="grid h-7 w-7 flex-shrink-0 place-items-center rounded bg-gray-700 uppercase text-white">
-                          {currentProjectDetails?.name.charAt(0)}
+                      currentProjectDetails && (
+                        <span className="grid place-items-center flex-shrink-0 h-4 w-4">
+                          <ProjectLogo logo={currentProjectDetails?.logo_props} className="text-sm" />
                         </span>
                       )
                     }

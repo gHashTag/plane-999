@@ -26,6 +26,7 @@ export const InboxIssueList: FC<TInboxIssueList> = observer((props) => {
     <div className="overflow-y-auto w-full h-full vertical-scrollbar scrollbar-md">
       {inboxIssueIds.map((issueId) => (
         <InboxIssueListItem
+          key={issueId}
           workspaceSlug={workspaceSlug}
           projectId={projectId}
           inboxId={inboxId}

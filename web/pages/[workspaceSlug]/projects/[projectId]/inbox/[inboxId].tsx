@@ -1,17 +1,17 @@
 import { ReactElement, useState } from "react";
+import { observer } from "mobx-react";
 import { useRouter } from "next/router";
 import useSWR from "swr";
-import { observer } from "mobx-react";
 // hooks
+import { PageHead } from "components/core";
+import { ProjectInboxHeader } from "components/headers";
+import { InboxSidebarRoot, InboxContentRoot, MobileInboxIssuesActionHeader } from "components/inbox";
+import { InboxLayoutLoader } from "components/ui";
 import { useProject, useInboxIssues } from "hooks/store";
 import useSize from "hooks/use-window-size";
 // layouts
 import { AppLayout } from "layouts/app-layout";
 // components
-import { InboxLayoutLoader } from "components/ui";
-import { PageHead } from "components/core";
-import { ProjectInboxHeader } from "components/headers";
-import { InboxSidebarRoot, InboxContentRoot, MobileInboxIssuesActionHeader } from "components/inbox";
 // types
 import { NextPageWithLayout } from "lib/types";
 

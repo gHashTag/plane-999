@@ -18,7 +18,6 @@ import {
 // hooks
 import { useUser, useInboxIssues, useIssueDetail, useWorkspace, useEventTracker } from "hooks/store";
 import useOutsideClickDetector from "hooks/use-outside-click-detector";
-import useToast from "hooks/use-toast";
 // components
 import {
   AcceptIssueModal,
@@ -27,11 +26,11 @@ import {
   SelectDuplicateInboxIssueModal,
 } from "components/inbox";
 // ui
-import { Button } from "@plane/ui";
+import { Button, TOAST_TYPE, setToast } from "@plane/ui";
 // helpers
 import { cn } from "helpers/common.helper";
 // types
-import type { TInboxStatus, TInboxDetailedStatus } from "@plane/types";
+import type { TInboxDetailedStatus } from "@plane/types";
 // constants
 import { EUserProjectRoles } from "constants/project";
 import { ISSUE_DELETED } from "constants/event-tracker";
@@ -48,7 +47,7 @@ type Props = {
 };
 
 type TInboxIssueOperations = {
-  updateInboxIssueStatus: (data: TInboxStatus) => Promise<void>;
+  updateInboxIssueStatus: (data: TInboxDetailedStatus) => Promise<void>;
   removeInboxIssue: () => Promise<void>;
 };
 
@@ -79,7 +78,6 @@ export const MobileInboxIssuesActionHeader: React.FC<Props> = observer((props) =
     currentUser,
     membership: { currentProjectRole },
   } = useUser();
-  const { setToastAlert } = useToast();
 
   // states
   const [date, setDate] = useState(new Date());
@@ -105,8 +103,8 @@ export const MobileInboxIssuesActionHeader: React.FC<Props> = observer((props) =
           if (!workspaceSlug || !projectId || !inboxId || !inboxIssueId) throw new Error("Missing required parameters");
           await updateInboxIssueStatus(workspaceSlug, projectId, inboxId, inboxIssueId, data);
         } catch (error) {
-          setToastAlert({
-            type: "error",
+          setToast({
+            type: TOAST_TYPE.ERROR,
             title: "Error!",
             message: "Something went wrong while updating inbox status. Please try again.",
           });
@@ -129,8 +127,8 @@ export const MobileInboxIssuesActionHeader: React.FC<Props> = observer((props) =
             pathname: `/${workspaceSlug}/projects/${projectId}/inbox/${inboxId}`,
           });
         } catch (error) {
-          setToastAlert({
-            type: "error",
+          setToast({
+            type: TOAST_TYPE.ERROR,
             title: "Error!",
             message: "Something went wrong while deleting inbox issue. Please try again.",
           });
@@ -153,7 +151,6 @@ export const MobileInboxIssuesActionHeader: React.FC<Props> = observer((props) =
       inboxIssueId,
       updateInboxIssueStatus,
       removeInboxIssue,
-      setToastAlert,
       captureIssueEvent,
       router,
     ]
@@ -377,7 +374,7 @@ export const MobileInboxIssuesActionHeader: React.FC<Props> = observer((props) =
           <Menu ref={menuRef} as="div" className={" w-min text-left"}>
             <>
               <button
-                onClick={(e) => {
+                onClick={() => {
                   setShowActionMenu(true);
                 }}
                 className="flex w-full items-center gap-x-2 rounded p-0.5 text-sm"
@@ -395,7 +392,7 @@ export const MobileInboxIssuesActionHeader: React.FC<Props> = observer((props) =
                     {issueActions.map(
                       (action, index) =>
                         action.show && (
-                          <Menu.Item as="div">
+                          <Menu.Item as="div" key={index}>
                             <button
                               onClick={(e) => {
                                 action.onClick();

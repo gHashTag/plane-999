@@ -1,17 +1,18 @@
 import { useState } from "react";
-import { observer } from "mobx-react-lite";
 import { Droppable } from "@hello-pangea/dnd";
+import { observer } from "mobx-react-lite";
 // components
 import { CalendarIssueBlocks, ICalendarDate, CalendarQuickAddIssueForm } from "components/issues";
 // helpers
 import { renderFormattedPayloadDate } from "helpers/date-time.helper";
 // constants
 import { MONTHS_LIST } from "constants/calendar";
-import { TGroupedIssues, TIssue, TIssueMap } from "@plane/types";
+// types
 import { ICycleIssuesFilter } from "store/issue/cycle";
 import { IModuleIssuesFilter } from "store/issue/module";
 import { IProjectIssuesFilter } from "store/issue/project";
 import { IProjectViewIssuesFilter } from "store/issue/project-views";
+import { TGroupedIssues, TIssue, TIssueMap } from "@plane/types";
 
 type Props = {
   issuesFilterStore: IProjectIssuesFilter | IModuleIssuesFilter | ICycleIssuesFilter | IProjectViewIssuesFilter;
@@ -27,6 +28,7 @@ type Props = {
     data: TIssue,
     viewId?: string
   ) => Promise<TIssue | undefined>;
+  addIssuesToView?: (issueIds: string[]) => Promise<any>;
   viewId?: string;
   readOnly?: boolean;
   selectedDate: Date;
@@ -43,6 +45,7 @@ export const CalendarDayTile: React.FC<Props> = observer((props) => {
     enableQuickIssueCreate,
     disableIssueCreation,
     quickAddCallback,
+    addIssuesToView,
     viewId,
     readOnly = false,
     selectedDate,
@@ -117,6 +120,7 @@ export const CalendarDayTile: React.FC<Props> = observer((props) => {
                         target_date: renderFormattedPayloadDate(date.date) ?? undefined,
                       }}
                       quickAddCallback={quickAddCallback}
+                      addIssuesToView={addIssuesToView}
                       viewId={viewId}
                       onOpen={() => setShowAllIssues(true)}
                     />

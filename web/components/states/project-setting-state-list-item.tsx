@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
 import { observer } from "mobx-react-lite";
+import { useRouter } from "next/router";
 // hooks
-import { useEventTracker, useProjectState } from "hooks/store";
 // ui
 import { Tooltip, StateGroupIcon, CustomMenu } from "@plane/ui";
 // icons
-import { Pencil, X, ArrowDown, ArrowUp, MoreHorizontal, PenIcon, Trash2, Circle } from "lucide-react";
+import { Pencil, X, ArrowDown, ArrowUp, MoreHorizontal, PenIcon, Trash2 } from "lucide-react";
 // helpers
 import { addSpaceIfCamelCase } from "helpers/string.helper";
+import { useEventTracker, useProjectState } from "hooks/store";
 // types
 import { IState } from "@plane/types";
 
@@ -177,6 +177,7 @@ export const StatesListItem: React.FC<Props> = observer((props) => {
               <></>
             ) : (
               <CustomMenu.MenuItem
+                key={index}
                 onClick={() => {
                   if (index === 0) handleMakeDefault();
                   if (index === 1) handleEditState();

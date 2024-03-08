@@ -1,12 +1,11 @@
 import { FC } from "react";
+import { observer } from "mobx-react-lite";
 import { useRouter } from "next/router";
 // ui
-import { Breadcrumbs, CustomMenu } from "@plane/ui";
 import { Settings } from "lucide-react";
+import { Breadcrumbs } from "@plane/ui";
 // hooks
-import { observer } from "mobx-react-lite";
 // components
-import { WORKSPACE_SETTINGS_LINKS } from "constants/workspace";
 import { BreadcrumbLink } from "components/common";
 
 export interface IWorkspaceSettingHeader {
