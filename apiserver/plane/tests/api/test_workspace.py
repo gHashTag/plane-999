@@ -22,7 +22,7 @@ class WorkSpaceCreateReadUpdateDelete(AuthenticatedAPITest):
 
         # Test with valid data
         response = self.client.post(
-            url, {"name": "Plane", "slug": "pla-ne"}, format="json"
+            url, {"name": "DAO 999 NFT", "slug": "pla-ne"}, format="json"
         )
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Workspace.objects.count(), 1)
@@ -39,6 +39,6 @@ class WorkSpaceCreateReadUpdateDelete(AuthenticatedAPITest):
 
         # Create a already existing workspace
         response = self.client.post(
-            url, {"name": "Plane", "slug": "pla-ne"}, format="json"
+            url, {"name": "DAO 999 NFT", "slug": "pla-ne"}, format="json"
         )
         self.assertEqual(response.status_code, status.HTTP_410_GONE)

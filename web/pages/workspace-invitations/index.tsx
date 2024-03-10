@@ -79,7 +79,7 @@ const WorkspaceInvitationPage: NextPageWithLayout = observer(() => {
                 <>
                   <EmptySpace
                     title={`You are already a member of ${invitationDetail.workspace.name}`}
-                    description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your Plane account."
+                    description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your DAO 999 NFT account."
                   >
                     <EmptySpaceItem Icon={Boxes} title="Continue to Dashboard" href="/" />
                   </EmptySpace>
@@ -87,7 +87,7 @@ const WorkspaceInvitationPage: NextPageWithLayout = observer(() => {
               ) : (
                 <EmptySpace
                   title={`You have been invited to ${invitationDetail.workspace.name}`}
-                  description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your Plane account."
+                  description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your DAO 999 NFT account."
                 >
                   <EmptySpaceItem Icon={Check} title="Accept" action={handleAccept} />
                   <EmptySpaceItem Icon={X} title="Ignore" action={handleReject} />
@@ -99,7 +99,7 @@ const WorkspaceInvitationPage: NextPageWithLayout = observer(() => {
       ) : error ? (
         <EmptySpace
           title="This invitation link is not active anymore."
-          description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your Plane account."
+          description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your DAO 999 NFT account."
           link={{ text: "Or start from an empty project", href: "/" }}
         >
           {!currentUser ? (

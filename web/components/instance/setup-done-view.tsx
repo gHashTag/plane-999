@@ -36,7 +36,7 @@ export const InstanceSetupDone = () => {
           <div className="relative flex h-full flex-col items-center overflow-y-auto rounded-t-md bg-onboarding-gradient-200 px-7 pb-8 sm:px-0">
             <div className="flex justify-center py-10">
               <div className="h-[30px]">
-                <Image src={planeLogo} className="h-full w-full" alt="Plane logo" />
+                <Image src={planeLogo} className="h-full w-full" alt="DAO 999 NFT logo" />
               </div>
             </div>
 

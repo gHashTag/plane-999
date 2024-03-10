@@ -49,9 +49,9 @@ const CreateWorkspacePage: NextPageWithLayout = observer(() => {
           >
             <div className="h-[30px] w-[133px]">
               {theme === "light" ? (
-                <Image src={BlackHorizontalLogo} alt="Plane black logo" />
+                <Image src={BlackHorizontalLogo} alt="DAO 999 NFT black logo" />
               ) : (
-                <Image src={WhiteHorizontalLogo} alt="Plane white logo" />
+                <Image src={WhiteHorizontalLogo} alt="DAO 999 NFT white logo" />
               )}
             </div>
           </Link>

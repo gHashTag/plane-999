@@ -1,5 +1,5 @@
 #!/bin/sh
 set -x
 
-echo "Starting Plane Frontend.."
+echo "Starting DAO 999 NFT Frontend.."
 node $1

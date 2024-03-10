@@ -18,7 +18,7 @@ jobs:
     name: Build-Push Web/Space/API/Proxy Docker Image
     runs-on: ubuntu-latest
     outputs:
-      gh_branch_name: ${{ steps.set_env_variables.outputs.TARGET_BRANCH }} 
+      gh_branch_name: ${{ steps.set_env_variables.outputs.TARGET_BRANCH }}
       gh_buildx_driver: ${{ steps.set_env_variables.outputs.BUILDX_DRIVER }}
       gh_buildx_version: ${{ steps.set_env_variables.outputs.BUILDX_VERSION }}
       gh_buildx_platforms: ${{ steps.set_env_variables.outputs.BUILDX_PLATFORMS }}
@@ -268,7 +268,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      - name: Build and Push Plane-Proxy to Docker Hub
+      - name: Build and Push DAO 999 NFT-Proxy to Docker Hub
         uses: docker/build-push-action@v5.1.0
         with:
           context: ./nginx
@@ -280,4 +280,3 @@ jobs:
           DOCKER_BUILDKIT: 1
           DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
-

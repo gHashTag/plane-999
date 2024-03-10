@@ -147,7 +147,7 @@ function prepare_environment() {
 }
 function download_plane() {
     # Download Docker Compose File from github url 
-    show_message "Downloading Plane Setup Files ✋"  >&2
+    show_message "Downloading DAO 999 NFT Setup Files ✋"  >&2
     sudo curl -H 'Cache-Control: no-cache, no-store' \
         -s -o $PLANE_INSTALL_DIR/docker-compose.yaml  \
         https://raw.githubusercontent.com/$CODE_REPO/$DEPLOY_BRANCH/deploy/selfhost/docker-compose.yml?token=$(date +%s) 
@@ -161,7 +161,7 @@ function download_plane() {
         sudo mv $PLANE_INSTALL_DIR/variables-upgrade.env $PLANE_INSTALL_DIR/.env
     fi
 
-    show_message "Plane Setup Files Downloaded ✅" "replace_last_line"  >&2
+    show_message "DAO 999 NFT Setup Files Downloaded ✅" "replace_last_line"  >&2
     show_message ""  >&2
 
     echo "PLANE_DOWNLOADED"
@@ -173,7 +173,7 @@ function printUsageInstructions() {
     show_message "Usage Instructions" >&2
     show_message "----------------------------------" >&2
     show_message ""  >&2
-    show_message "To use the Plane Setup utility, use below commands" >&2
+    show_message "To use the DAO 999 NFT Setup utility, use below commands" >&2
     show_message "" >&2
 
     show_message "Usage: plane-app [OPTION]" >&2

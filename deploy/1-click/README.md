@@ -4,9 +4,9 @@ In this guide, we will walk you through the process of setting up a 1-click self
 
 Let's get started!
 
-## Installing Plane
+## Installing DAO 999 NFT
 
-Installing Plane is a very easy and minimal step process.
+Installing DAO 999 NFT is a very easy and minimal step process.
 
 ### Prerequisite
 
@@ -44,11 +44,11 @@ Access the application on a browser via http://server-ip-address
 
 ---
 
-### Get Control of your Plane Server Setup
+### Get Control of your DAO 999 NFT Server Setup
 
-Plane App is available via the command `plane-app`. Running the command `plane-app --help` helps you to manage Plane
+DAO 999 NFT App is available via the command `plane-app`. Running the command `plane-app --help` helps you to manage DAO 999 NFT
 
-![Plane Help](images/help.png)
+![DAO 999 NFT Help](images/help.png)
 
 <ins>Basic Operations</ins>:
 
@@ -58,7 +58,7 @@ Plane App is available via the command `plane-app`. Running the command `plane-a
 
 <ins>Advanced Operations</ins>:
 
-1. Configure Plane using `plane-app --configure`. This will give you options to modify
+1. Configure DAO 999 NFT using `plane-app --configure`. This will give you options to modify
 
    - NGINX Port (default 80)
    - Domain Name (default is the local server public IP address)
@@ -67,13 +67,13 @@ Plane App is available via the command `plane-app`. Running the command `plane-a
    - External Redis URL (optional - default empty)
    - AWS S3 Bucket (optional - to be configured only in case the user wants to use an S3 Bucket)
 
-1. Upgrade Plane using `plane-app --upgrade`. This will get the latest stable version of Plane files (docker-compose.yaml, .env, and docker images)
+1. Upgrade DAO 999 NFT using `plane-app --upgrade`. This will get the latest stable version of DAO 999 NFT files (docker-compose.yaml, .env, and docker images)
 
-1. Updating Plane App installer using `plane-app --update-installer` will update the `plane-app` utility.
+1. Updating DAO 999 NFT App installer using `plane-app --update-installer` will update the `plane-app` utility.
 
-1. Uninstall Plane using `plane-app --uninstall`. This will uninstall the Plane application from the server and all docker containers but do not remove the data stored in Postgres, Redis, and Minio.
+1. Uninstall DAO 999 NFT using `plane-app --uninstall`. This will uninstall the DAO 999 NFT application from the server and all docker containers but do not remove the data stored in Postgres, Redis, and Minio.
 
-1. Plane App can be reinstalled using `plane-app --install`.
+1. DAO 999 NFT App can be reinstalled using `plane-app --install`.
 
 <ins>Application Data is stored in the mentioned folders</ins>:
 

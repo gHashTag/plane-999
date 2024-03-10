@@ -206,7 +206,7 @@ export const UserDetails: React.FC<Props> = observer((props) => {
                 name="first_name"
                 render={({ field: { value } }) => (
                   <p className="p-0 text-xl font-medium text-onboarding-text-200 sm:text-2xl">
-                    And how will you use Plane{value.length > 0 ? ", " : ""}
+                    And how will you use DAO 999 NFT{value.length > 0 ? ", " : ""}
                     {value}?
                   </p>
                 )}

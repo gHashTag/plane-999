@@ -85,7 +85,7 @@ function buildLocalImage() {
     fi
 }
 function install() {
-    echo "Installing Plane.........."
+    echo "Installing DAO 999 NFT.........."
     download
 }
 function download() {
@@ -157,7 +157,7 @@ function startServices() {
     if [ -n "$migrator_container_id" ]; then
         local migrator_exit_code=$(docker inspect --format='{{.State.ExitCode}}' $migrator_container_id)
         if [ $migrator_exit_code -ne 0 ]; then
-            echo "Plane Server failed to start ❌"
+            echo "DAO 999 NFT Server failed to start ❌"
             stopServices
             exit 1
         fi

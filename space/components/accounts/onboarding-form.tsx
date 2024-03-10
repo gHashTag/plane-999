@@ -84,7 +84,7 @@ export const OnBoardingForm: React.FC<Props> = observer(({ user }) => {
         <div className="absolute -left-3 -top-1 text-gray-800">{'"'}</div>
         <h5>Hey there 👋🏻</h5>
         <h5 className="mb-6 mt-5">Let{"'"}s get you onboard!</h5>
-        <h4 className="text-xl font-semibold sm:text-2xl">Set up your Plane profile.</h4>
+        <h4 className="text-xl font-semibold sm:text-2xl">Set up your DAO 999 NFT profile.</h4>
       </div>
 
       <div className="space-y-7 sm:w-3/4 md:w-2/5">

@@ -82,13 +82,13 @@ const emptyStateDetails = {
     key: "workspace-dashboard",
     title: "Overview of your projects, activity, and metrics",
     description:
-      " Welcome to Plane, we are excited to have you here. Create your first project and track your issues, and this page will transform into a space that helps you progress. Admins will also see items which help their team progress.",
+      " Welcome to DAO 999 NFT, we are excited to have you here. Create your first project and track your issues, and this page will transform into a space that helps you progress. Admins will also see items which help their team progress.",
     path: "/empty-state/onboarding/dashboard",
     // path: "/empty-state/onboarding/",
     primaryButton: {
       text: "Build your first project",
       comicBox: {
-        title: "Everything starts with a project in Plane",
+        title: "Everything starts with a project in DAO 999 NFT",
         description: "A project could be a product’s roadmap, a marketing campaign, or launching a new car.",
       },
     },
@@ -122,7 +122,7 @@ const emptyStateDetails = {
     primaryButton: {
       text: "Start your first project",
       comicBox: {
-        title: "Everything starts with a project in Plane",
+        title: "Everything starts with a project in DAO 999 NFT",
         description: "A project could be a product’s roadmap, a marketing campaign, or launching a new car.",
       },
     },
@@ -183,7 +183,7 @@ const emptyStateDetails = {
     primaryButton: {
       text: "Start your first project",
       comicBox: {
-        title: "Everything starts with a project in Plane",
+        title: "Everything starts with a project in DAO 999 NFT",
         description: "A project could be a product’s roadmap, a marketing campaign, or launching a new car.",
       },
     },
@@ -195,7 +195,7 @@ const emptyStateDetails = {
     key: "workspace-settings-api-tokens",
     title: "No API tokens created",
     description:
-      "Plane APIs can be used to integrate your data in Plane with any external system. Create a token to get started.",
+      "DAO 999 NFT APIs can be used to integrate your data in DAO 999 NFT with any external system. Create a token to get started.",
     path: "/empty-state/workspace-settings/api-tokens",
   },
   "workspace-settings-webhooks": {
@@ -352,9 +352,9 @@ const emptyStateDetails = {
     primaryButton: {
       text: "Create your first issue",
       comicBox: {
-        title: "Issues are building blocks in Plane.",
+        title: "Issues are building blocks in DAO 999 NFT.",
         description:
-          "Redesign the Plane UI, Rebrand the company, or Launch the new fuel injection system are examples of issues that likely have sub-issues.",
+          "Redesign the DAO 999 NFT UI, Rebrand the company, or Launch the new fuel injection system are examples of issues that likely have sub-issues.",
       },
     },
     accessType: "project",
@@ -453,9 +453,10 @@ const emptyStateDetails = {
   // project pages
   "project-page": {
     key: "pages",
-    title: "Write a note, a doc, or a full knowledge base. Get Galileo, Plane’s AI assistant, to help you get started",
+    title:
+      "Write a note, a doc, or a full knowledge base. Get Galileo, DAO 999 NFT’s AI assistant, to help you get started",
     description:
-      "Pages are thoughts potting space in Plane. Take down meeting notes, format them easily, embed issues, lay them out using a library of components, and keep them all in your project’s context. To make short work of any doc, invoke Galileo, Plane’s AI, with a shortcut or the click of a button.",
+      "Pages are thoughts potting space in DAO 999 NFT. Take down meeting notes, format them easily, embed issues, lay them out using a library of components, and keep them all in your project’s context. To make short work of any doc, invoke Galileo, DAO 999 NFT’s AI, with a shortcut or the click of a button.",
     path: "/empty-state/onboarding/pages",
     primaryButton: {
       text: "Create your first page",

@@ -36,7 +36,7 @@ const TOUR_STEPS: {
     key: "issues",
     title: "Plan with issues",
     description:
-      "The issue is the building block of the Plane. Most concepts in Plane are either associated with issues and their properties.",
+      "The issue is the building block of the DAO 999 NFT. Most concepts in DAO 999 NFT are either associated with issues and their properties.",
     image: IssuesTour,
     nextStep: "cycles",
   },
@@ -93,14 +93,14 @@ export const TourRoot: React.FC<Props> = observer((props) => {
         <div className="h-3/4 w-4/5 overflow-hidden rounded-[10px] bg-custom-background-100 md:w-1/2 lg:w-2/5">
           <div className="h-full overflow-hidden">
             <div className="grid h-3/5 place-items-center bg-custom-primary-100">
-              <Image src={PlaneWhiteLogo} alt="Plane White Logo" />
+              <Image src={PlaneWhiteLogo} alt="DAO 999 NFT White Logo" />
             </div>
             <div className="flex h-2/5 flex-col overflow-y-auto p-6">
               <h3 className="font-semibold sm:text-xl">
-                Welcome to Plane, {currentUser?.first_name} {currentUser?.last_name}
+                Welcome to DAO 999 NFT, {currentUser?.first_name} {currentUser?.last_name}
               </h3>
               <p className="mt-3 text-sm text-custom-text-200">
-                We{"'"}re glad that you decided to try out Plane. You can now manage your projects with ease. Get
+                We{"'"}re glad that you decided to try out DAO 999 NFT. You can now manage your projects with ease. Get
                 started by creating a project.
               </p>
               <div className="flex h-full items-end">

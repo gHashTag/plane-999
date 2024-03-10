@@ -1,6 +1,6 @@
-# Contributing to Plane
+# Contributing to DAO 999 NFT
 
-Thank you for showing an interest in contributing to Plane! All kinds of contributions are valuable to us. In this guide, we will cover how you can quickly onboard and make your first contribution.
+Thank you for showing an interest in contributing to DAO 999 NFT! All kinds of contributions are valuable to us. In this guide, we will cover how you can quickly onboard and make your first contribution.
 
 ## Submitting an issue
 
@@ -68,7 +68,7 @@ Questions, suggestions, and thoughts are most welcome. We can also be reached in
 
 ## Ways to contribute
 
-- Try Plane Cloud and the self hosting platform and give feedback
+- Try DAO 999 NFT Cloud and the self hosting platform and give feedback
 - Add new integrations
 - Help with open [issues](https://github.com/makeplane/plane/issues) or [create your own](https://github.com/makeplane/plane/issues/new/choose)
 - Share your thoughts and suggestions with us

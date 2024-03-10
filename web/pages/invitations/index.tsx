@@ -132,9 +132,9 @@ const UserInvitationsPage: NextPageWithLayout = observer(() => {
           <div className="absolute left-5 top-1/2 grid -translate-y-1/2 place-items-center bg-custom-background-100 px-3 sm:left-1/2 sm:top-12 sm:-translate-x-[15px] sm:translate-y-0 sm:px-0 sm:py-5 md:left-1/3">
             <div className="h-[30px] w-[133px]">
               {theme === "light" ? (
-                <Image src={BlackHorizontalLogo} alt="Plane black logo" />
+                <Image src={BlackHorizontalLogo} alt="DAO 999 NFT black logo" />
               ) : (
-                <Image src={WhiteHorizontalLogo} alt="Plane white logo" />
+                <Image src={WhiteHorizontalLogo} alt="DAO 999 NFT white logo" />
               )}
             </div>
           </div>

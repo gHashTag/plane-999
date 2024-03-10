@@ -99,8 +99,8 @@ export const DeleteApiTokenModal: FC<Props> = (props) => {
                   </div>
                   <span>
                     <p className="text-sm text-custom-text-400">
-                      Any application using this token will no longer have the access to Plane data. This action cannot
-                      be undone.
+                      Any application using this token will no longer have the access to DAO 999 NFT data. This action
+                      cannot be undone.
                     </p>
                   </span>
                   <div className="mt-2 flex justify-end gap-2">

@@ -173,7 +173,7 @@ export const Invitations: React.FC<Props> = (props) => {
 
 const EmptyInvitation = ({ email, setTryDiffAccount }: { email: string; setTryDiffAccount: () => void }) => (
   <div className="my-16 items-center justify-center rounded border border-onboarding-border-200 bg-onboarding-background-300/30 px-10 py-5 md:w-4/5 ">
-    <p className="text-center text-lg font-semibold text-onboarding-text-300">Is your team already on Plane?</p>
+    <p className="text-center text-lg font-semibold text-onboarding-text-300">Is your team already on DAO 999 NFT?</p>
     <p className="mt-6 text-center text-sm text-onboarding-text-300">
       We couldn’t find any existing workspaces for the email address {email}
     </p>

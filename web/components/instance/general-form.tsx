@@ -102,7 +102,7 @@ export const InstanceGeneralForm: FC<IInstanceGeneralForm> = (props) => {
         <div>
           <div className="text-custom-text-100 font-medium text-sm">Share anonymous usage instance</div>
           <div className="text-custom-text-300 font-normal text-xs">
-            Help us understand how you use Plane so we can build better for you.
+            Help us understand how you use DAO 999 NFT so we can build better for you.
           </div>
         </div>
         <div>

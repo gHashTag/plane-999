@@ -44,7 +44,7 @@ After installation, you can verify the installation by opening a terminal (Comma
 
 ---
 
-## Installing Plane
+## Installing DAO 999 NFT
 
 Installing plane is a very easy and minimal step process.
 
@@ -157,7 +157,7 @@ Be patient as it might take sometime based on download speed and system configur
 
 This is the confirmation that all images were downloaded and the services are up & running.
 
-You have successfully self hosted `Plane` instance. Access the application by going to IP or domain you have configured it (e.g `https://plane.example.com:8080` or `http://[IP-ADDRESS]:8080`)
+You have successfully self hosted `DAO 999 NFT` instance. Access the application by going to IP or domain you have configured it (e.g `https://plane.example.com:8080` or `http://[IP-ADDRESS]:8080`)
 
 ---
 
@@ -209,9 +209,9 @@ If all goes well, you must see something like this
 
 ---
 
-### Upgrading Plane Version
+### Upgrading DAO 999 NFT Version
 
-It is always advised to keep Plane up to date with the latest release.
+It is always advised to keep DAO 999 NFT up to date with the latest release.
 
 Lets again run the `./setup.sh` command. You will again be prompted with the below options. This time select `5` to upgrade the release.
 

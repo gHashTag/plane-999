@@ -88,7 +88,7 @@ export const SignUpRoot = observer(() => {
         <>
           <OAuthOptions handleSignInRedirection={handleRedirection} type="sign_up" />
           <p className="text-xs text-onboarding-text-300 text-center mt-6">
-            Already using Plane?{" "}
+            Already using DAO 999 NFT?{" "}
             <Link
               href="/"
               onClick={() => captureEvent(NAVIGATE_TO_SIGNIN, {})}

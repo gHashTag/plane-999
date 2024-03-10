@@ -265,8 +265,8 @@ export const OnboardingSidebar: React.FC<Props> = (props) => {
             {" "}
             <div className="mb-3 flex w-4/5 items-center justify-between text-base font-medium text-custom-text-200">
               <div className="flex items-center gap-x-2">
-                <Image src={projectEmoji} alt="Plane Logo" className="h-4 w-4" />
-                <span> Plane</span>
+                <Image src={projectEmoji} alt="DAO 999 NFT Logo" className="h-4 w-4" />
+                <span> DAO 999 NFT</span>
               </div>
 
               <ChevronDown className="h-4 w-4" />

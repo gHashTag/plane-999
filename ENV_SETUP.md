@@ -82,7 +82,7 @@ EMAIL_HOST=""
 EMAIL_HOST_USER=""
 EMAIL_HOST_PASSWORD=""
 EMAIL_PORT=587
-EMAIL_FROM="Team Plane <team@mailer.plane.so>"
+EMAIL_FROM="Team DAO 999 NFT <info@dao999nft.com>"
 EMAIL_USE_TLS="1"
 EMAIL_USE_SSL="0"
 ​
@@ -127,4 +127,4 @@ WEB_URL="http://localhost"
 - The naming convention for containers and images has been updated.
 - The plane-worker image will no longer be maintained, as it has been merged with plane-backend.
 - The Tiptap pro-extension dependency has been removed, eliminating the need for Tiptap API keys.
-- The image name for Plane deployment has been changed to plane-space.
+- The image name for DAO 999 NFT deployment has been changed to plane-space.

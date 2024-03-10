@@ -65,7 +65,7 @@ export const WorkspaceHelpSection: React.FC<WorkspaceHelpSectionProps> = observe
       >
         {!isCollapsed && (
           <div className="w-1/2 cursor-default rounded-md bg-green-500/10 px-2.5 py-1.5 text-center text-sm font-medium text-green-500 outline-none">
-            Free Plan
+            Premium
           </div>
         )}
         <div className={`flex items-center gap-1 ${isCollapsed ? "flex-col justify-center" : "w-1/2 justify-evenly"}`}>

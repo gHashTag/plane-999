@@ -27,7 +27,7 @@ const OnBoardingPage = () => {
           <div className="absolute left-0 top-1/2 z-10 h-[0.5px] w-full -translate-y-1/2 border-b-[0.5px] border-custom-border-200 sm:left-1/2 sm:top-0 sm:h-screen sm:w-[0.5px] sm:-translate-x-1/2 sm:translate-y-0 sm:border-r-[0.5px] md:left-1/3" />
           <div className="absolute left-2 top-1/2 z-10 grid -translate-y-1/2 place-items-center bg-custom-background-100 px-3 py-5 sm:left-1/2 sm:top-12 sm:-translate-x-1/2 sm:translate-y-0 sm:px-0 md:left-1/3">
             <div className="h-[30px] w-[30px]">
-              <img src={`${imagePrefix}/plane-logos/blue-without-text.png`} alt="Plane logo" />
+              <img src={`${imagePrefix}/plane-logos/blue-without-text.png`} alt="DAO 999 NFT logo" />
             </div>
           </div>
           <div className="absolute right-4 top-1/4 -translate-y-1/2 text-sm font-medium text-custom-text-100 sm:fixed sm:right-16 sm:top-12 sm:translate-y-0 sm:py-5">

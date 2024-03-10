@@ -33,7 +33,7 @@ const INSTANCE_ADMIN_LINKS = [
   },
   {
     Icon: Image,
-    name: "Images in Plane",
+    name: "Images in DAO 999 NFT",
     description: "Allow third-party image libraries",
     href: `/god-mode/image`,
   },

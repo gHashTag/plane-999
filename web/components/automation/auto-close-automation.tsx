@@ -74,7 +74,7 @@ export const AutoCloseAutomation: React.FC<Props> = observer((props) => {
             <div className="">
               <h4 className="text-sm font-medium">Auto-close issues</h4>
               <p className="text-sm tracking-tight text-custom-text-200">
-                Plane will automatically close issue that haven{"'"}t been completed or canceled.
+                DAO 999 NFT will automatically close issue that haven{"'"}t been completed or canceled.
               </p>
             </div>
           </div>

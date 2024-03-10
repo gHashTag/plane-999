@@ -28,12 +28,12 @@ const integrationDetails: { [key: string]: any } = {
   github: {
     logo: GithubLogo,
     installed: "Activate GitHub on individual projects to sync with specific repositories.",
-    notInstalled: "Connect with GitHub with your Plane workspace to sync project issues.",
+    notInstalled: "Connect with GitHub with your DAO 999 NFT workspace to sync project issues.",
   },
   slack: {
     logo: SlackLogo,
     installed: "Activate Slack on individual projects to sync with specific channels.",
-    notInstalled: "Connect with Slack with your Plane workspace to sync project issues.",
+    notInstalled: "Connect with Slack with your DAO 999 NFT workspace to sync project issues.",
   },
 };
 

@@ -17,4 +17,4 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 # Scout Settings
 SCOUT_MONITOR = os.environ.get("SCOUT_MONITOR", False)
 SCOUT_KEY = os.environ.get("SCOUT_KEY", "")
-SCOUT_NAME = "Plane"
+SCOUT_NAME = "DAO 999 NFT"

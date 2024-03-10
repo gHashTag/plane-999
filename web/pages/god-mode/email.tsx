@@ -28,7 +28,8 @@ const InstanceAdminEmailPage: NextPageWithLayout = observer(() => {
         <div className="mb-2 border-b border-custom-border-100 pb-3">
           <div className="pb-1 text-xl font-medium text-custom-text-100">Secure emails from your own instance</div>
           <div className="text-sm font-normal text-custom-text-300">
-            Plane can send useful emails to you and your users from your own instance without talking to the Internet.
+            DAO 999 NFT can send useful emails to you and your users from your own instance without talking to the
+            Internet.
           </div>
           <div className="text-sm font-normal text-custom-text-300">
             Set it up below and please test your settings before you save them.{" "}

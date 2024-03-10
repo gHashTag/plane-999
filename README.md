@@ -2,11 +2,11 @@
 
 <p align="center">
 <a href="https://plane.so">
-  <img src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_logo_.webp" alt="Plane Logo" width="70">
+  <img src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_logo_.webp" alt="DAO 999 NFT Logo" width="70">
 </a>
 </p>
 
-<h3 align="center"><b>Plane</b></h3>
+<h3 align="center"><b>DAO 999 NFT</b></h3>
 <p align="center"><b>Open-source project management that unlocks customer value.</b></p>
 
 <p align="center">
@@ -27,28 +27,28 @@
     <a href="https://app.plane.so/#gh-light-mode-only" target="_blank">
       <img
         src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screen.webp"
-        alt="Plane Screens"
+        alt="DAO 999 NFT Screens"
         width="100%"
       />
     </a>
     <a href="https://app.plane.so/#gh-dark-mode-only" target="_blank">
       <img
         src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screens_dark_mode.webp"
-        alt="Plane Screens"
+        alt="DAO 999 NFT Screens"
         width="100%"
       />
     </a>
 </p>
 
-Meet [Plane](https://plane.so). An open-source software development tool to manage issues, sprints, and product roadmaps with peace of mind. 🧘‍♀️
+Meet [DAO 999 NFT](https://plane.so). An open-source software development tool to manage issues, sprints, and product roadmaps with peace of mind. 🧘‍♀️
 
-> Plane is still in its early days, not everything will be perfect yet, and hiccups may happen. Please let us know of any suggestions, ideas, or bugs that you encounter on our [Discord](https://discord.com/invite/A92xrEGCge) or GitHub issues, and we will use your feedback to improve on our upcoming releases.
+> DAO 999 NFT is still in its early days, not everything will be perfect yet, and hiccups may happen. Please let us know of any suggestions, ideas, or bugs that you encounter on our [Discord](https://discord.com/invite/A92xrEGCge) or GitHub issues, and we will use your feedback to improve on our upcoming releases.
 
 ## ⚡ Installation
 
-The easiest way to get started with Plane is by creating a [Plane Cloud](https://app.plane.so) account where we offer a hosted solution for users.
+The easiest way to get started with DAO 999 NFT is by creating a [DAO 999 NFT Cloud](https://app.plane.so) account where we offer a hosted solution for users.
 
-If you want more control over your data prefer to self-host Plane, please refer to our [deployment documentation](https://docs.plane.so/docker-compose).
+If you want more control over your data prefer to self-host DAO 999 NFT, please refer to our [deployment documentation](https://docs.plane.so/docker-compose).
 
 | Installation Methods | Documentation Link                                                                                                                                           |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -68,9 +68,9 @@ If you want more control over your data prefer to self-host Plane, please refer 
 
 - **Views**: Create custom filters to display only the issues that matter to you. Save and share your filters in just a few clicks.
 
-- **Pages**: Plane pages, equipped with AI and a rich text editor, let you jot down your thoughts on the fly. Format your text, upload images, hyperlink, or sync your existing ideas into an actionable item or issue.
+- **Pages**: DAO 999 NFT pages, equipped with AI and a rich text editor, let you jot down your thoughts on the fly. Format your text, upload images, hyperlink, or sync your existing ideas into an actionable item or issue.
 
-- **Analytics**: Get insights into all your Plane data in real-time. Visualize issue data to spot trends, remove blockers, and progress your work.
+- **Analytics**: Get insights into all your DAO 999 NFT data in real-time. Visualize issue data to spot trends, remove blockers, and progress your work.
 
 - **Drive** (_coming soon_): The drive helps you share documents, images, videos, or any other files that make sense to you or your team and align on the problem/solution.
 
@@ -110,13 +110,13 @@ Thats it!
 
 ## ❤️ Community
 
-The Plane community can be found on [GitHub Discussions](https://github.com/orgs/makeplane/discussions), and our [Discord server](https://discord.com/invite/A92xrEGCge). Our [Code of conduct](https://github.com/makeplane/plane/blob/master/CODE_OF_CONDUCT.md) applies to all Plane community chanels.
+The DAO 999 NFT community can be found on [GitHub Discussions](https://github.com/orgs/makeplane/discussions), and our [Discord server](https://discord.com/invite/A92xrEGCge). Our [Code of conduct](https://github.com/makeplane/plane/blob/master/CODE_OF_CONDUCT.md) applies to all DAO 999 NFT community chanels.
 
 Ask questions, report bugs, join discussions, voice ideas, make feature requests, or share your projects.
 
 ### Repo Activity
 
-![Plane Repo Activity](https://repobeats.axiom.co/api/embed/2523c6ed2f77c082b7908c33e2ab208981d76c39.svg "Repobeats analytics image")
+![DAO 999 NFT Repo Activity](https://repobeats.axiom.co/api/embed/2523c6ed2f77c082b7908c33e2ab208981d76c39.svg "Repobeats analytics image")
 
 ## 📸 Screenshots
 
@@ -124,7 +124,7 @@ Ask questions, report bugs, join discussions, voice ideas, make feature requests
     <a href="https://plane.so" target="_blank">
       <img
         src="https://ik.imagekit.io/w2okwbtu2/Issues_rNZjrGgFl.png?updatedAt=1709298765880"
-        alt="Plane Views"
+        alt="DAO 999 NFT Views"
         width="100%"
       />
     </a>
@@ -141,7 +141,7 @@ Ask questions, report bugs, join discussions, voice ideas, make feature requests
     <a href="https://plane.so" target="_blank">
       <img
         src="https://ik.imagekit.io/w2okwbtu2/Modules_PSCVsbSfI.png?updatedAt=1709298796783"
-        alt="Plane Cycles and Modules"
+        alt="DAO 999 NFT Cycles and Modules"
         width="100%"
       />
     </a>
@@ -150,7 +150,7 @@ Ask questions, report bugs, join discussions, voice ideas, make feature requests
     <a href="https://plane.so" target="_blank">
       <img
         src="https://ik.imagekit.io/w2okwbtu2/Views_uxXsRatS4.png?updatedAt=1709298834522"
-        alt="Plane Analytics"
+        alt="DAO 999 NFT Analytics"
         width="100%"
       />
     </a>
@@ -159,7 +159,7 @@ Ask questions, report bugs, join discussions, voice ideas, make feature requests
     <a href="https://plane.so" target="_blank">
       <img
         src="https://ik.imagekit.io/w2okwbtu2/Analytics_0o22gLRtp.png?updatedAt=1709298834389"
-        alt="Plane Pages"
+        alt="DAO 999 NFT Pages"
         width="100%"
       />
     </a>
@@ -169,7 +169,7 @@ Ask questions, report bugs, join discussions, voice ideas, make feature requests
     <a href="https://plane.so" target="_blank">
       <img
         src="https://ik.imagekit.io/w2okwbtu2/Drive_LlfeY4xn3.png?updatedAt=1709298837917"
-        alt="Plane Command Menu"
+        alt="DAO 999 NFT Command Menu"
         width="100%"
       />
     </a>
@@ -178,17 +178,17 @@ Ask questions, report bugs, join discussions, voice ideas, make feature requests
 
 ## ⛓️ Security
 
-If you believe you have found a security vulnerability in Plane, we encourage you to responsibly disclose this and not open a public issue. We will investigate all legitimate reports.
+If you believe you have found a security vulnerability in DAO 999 NFT, we encourage you to responsibly disclose this and not open a public issue. We will investigate all legitimate reports.
 
 Email squawk@plane.so to disclose any security vulnerabilities.
 
 ## ❤️ Contribute
 
-There are many ways to contribute to Plane, including:
+There are many ways to contribute to DAO 999 NFT, including:
 
 - Submitting [bugs](https://github.com/makeplane/plane/issues/new?assignees=srinivaspendem%2Cpushya22&labels=%F0%9F%90%9Bbug&projects=&template=--bug-report.yaml&title=%5Bbug%5D%3A+) and [feature requests](https://github.com/makeplane/plane/issues/new?assignees=srinivaspendem%2Cpushya22&labels=%E2%9C%A8feature&projects=&template=--feature-request.yaml&title=%5Bfeature%5D%3A+) for various components.
 - Reviewing [the documentation](https://docs.plane.so/) and submitting [pull requests](https://github.com/makeplane/plane), from fixing typos to adding new features.
-- Speaking or writing about Plane or any other ecosystem integration and [letting us know](https://discord.com/invite/A92xrEGCge)!
+- Speaking or writing about DAO 999 NFT or any other ecosystem integration and [letting us know](https://discord.com/invite/A92xrEGCge)!
 - Upvoting [popular feature requests](https://github.com/makeplane/plane/issues) to show your support.
 
 ### We couldn't have done this without you.
