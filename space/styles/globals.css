@@ -13,24 +13,24 @@
   :root {
     color-scheme: light !important;
 
-    --color-primary-10: 236, 241, 255;
-    --color-primary-20: 217, 228, 255;
-    --color-primary-30: 197, 214, 255;
-    --color-primary-40: 178, 200, 255;
-    --color-primary-50: 159, 187, 255;
-    --color-primary-60: 140, 173, 255;
-    --color-primary-70: 121, 159, 255;
-    --color-primary-80: 101, 145, 255;
-    --color-primary-90: 82, 132, 255;
-    --color-primary-100: 63, 118, 255;
-    --color-primary-200: 57, 106, 230;
-    --color-primary-300: 50, 94, 204;
-    --color-primary-400: 44, 83, 179;
-    --color-primary-500: 38, 71, 153;
-    --color-primary-600: 32, 59, 128;
-    --color-primary-700: 25, 47, 102;
-    --color-primary-800: 19, 35, 76;
-    --color-primary-900: 13, 24, 51;
+    --color-primary-10: 255, 250, 205; /* светло-желтый */
+  --color-primary-20: 255, 245, 180; /* светло-желтый с меньшей яркостью */
+  --color-primary-30: 255, 240, 155; /* светло-желтый с еще меньшей яркостью */
+  --color-primary-40: 255, 235, 130; /* средний желтый */
+  --color-primary-50: 255, 230, 105; /* насыщенный желтый */
+  --color-primary-60: 255, 225, 80;  /* насыщенный желтый с меньшей яркостью */
+  --color-primary-70: 255, 220, 55;  /* темно-желтый */
+  --color-primary-80: 255, 215, 30;  /* темно-желтый с меньшей яркостью */
+  --color-primary-90: 255, 210, 5;   /* темно-желтый с еще меньшей яркостью */
+  --color-primary-100: 255, 205, 0;  /* желтый */
+  --color-primary-200: 230, 185, 0;  /* темный желтый */
+  --color-primary-300: 204, 165, 0;  /* более темный желтый */
+  --color-primary-400: 179, 145, 0;  /* еще более темный желтый */
+  --color-primary-500: 153, 125, 0;  /* золотистый */
+  --color-primary-600: 128, 105, 0;  /* темно-золотистый */
+  --color-primary-700: 102, 85, 0;   /* очень темный золотистый */
+  --color-primary-800: 76, 65, 0;    /* почти коричневый */
+  --color-primary-900: 51, 45, 0;    /* очень темный коричнево-желтый */
 
     --color-background-100: 255, 255, 255; /* primary bg */
     --color-background-90: 250, 250, 250; /* secondary bg */
@@ -215,24 +215,24 @@
   [data-theme="dark"],
   [data-theme="light-contrast"],
   [data-theme="dark-contrast"] {
-    --color-primary-10: 236, 241, 255;
-    --color-primary-20: 217, 228, 255;
-    --color-primary-30: 197, 214, 255;
-    --color-primary-40: 178, 200, 255;
-    --color-primary-50: 159, 187, 255;
-    --color-primary-60: 140, 173, 255;
-    --color-primary-70: 121, 159, 255;
-    --color-primary-80: 101, 145, 255;
-    --color-primary-90: 82, 132, 255;
-    --color-primary-100: 63, 118, 255;
-    --color-primary-200: 57, 106, 230;
-    --color-primary-300: 50, 94, 204;
-    --color-primary-400: 44, 83, 179;
-    --color-primary-500: 38, 71, 153;
-    --color-primary-600: 32, 59, 128;
-    --color-primary-700: 25, 47, 102;
-    --color-primary-800: 19, 35, 76;
-    --color-primary-900: 13, 24, 51;
+    --color-primary-10: 255, 250, 205; /* светло-желтый */
+    --color-primary-20: 255, 245, 180; /* светло-желтый с меньшей яркостью */
+    --color-primary-30: 255, 240, 155; /* светло-желтый с еще меньшей яркостью */
+    --color-primary-40: 255, 235, 130; /* средний желтый */
+    --color-primary-50: 255, 230, 105; /* насыщенный желтый */
+    --color-primary-60: 255, 225, 80;  /* насыщенный желтый с меньшей яркостью */
+    --color-primary-70: 255, 220, 55;  /* темно-желтый */
+    --color-primary-80: 255, 215, 30;  /* темно-желтый с меньшей яркостью */
+    --color-primary-90: 255, 210, 5;   /* темно-желтый с еще меньшей яркостью */
+    --color-primary-100: 255, 205, 0;  /* желтый */
+    --color-primary-200: 230, 185, 0;  /* темный желтый */
+    --color-primary-300: 204, 165, 0;  /* более темный желтый */
+    --color-primary-400: 179, 145, 0;  /* еще более темный желтый */
+    --color-primary-500: 153, 125, 0;  /* золотистый */
+    --color-primary-600: 128, 105, 0;  /* темно-золотистый */
+    --color-primary-700: 102, 85, 0;   /* очень темный золотистый */
+    --color-primary-800: 76, 65, 0;    /* почти коричневый */
+    --color-primary-900: 51, 45, 0;    /* очень темный коричнево-желтый */
 
     --color-sidebar-background-100: var(--color-background-100); /* primary sidebar bg */
     --color-sidebar-background-90: var(--color-background-90); /* secondary sidebar bg */

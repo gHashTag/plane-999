@@ -12,6 +12,8 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
+    "@100mslive/react-sdk": "^0.10.1",
+    "@100mslive/roomkit-react": "^0.3.1",
     "@blueprintjs/popover2": "^1.13.3",
     "@headlessui/react": "^1.7.3",
     "@hello-pangea/dnd": "^16.3.0",

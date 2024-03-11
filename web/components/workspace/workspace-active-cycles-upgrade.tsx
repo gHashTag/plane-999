@@ -55,14 +55,14 @@ export const WorkspaceActiveCyclesUpgrade = observer(() => {
           </span>
         </div>
         <div className="relative w-1/2 hidden lg:block">
-          <span className="absolute right-0 bottom-0">
+          {/* <span className="absolute right-0 bottom-0">
             <Image
               src={`/workspace-active-cycles/cta-r-1-${isDarkMode ? "dark" : "light"}.webp`}
               height={420}
               width={500}
               alt="r-1"
             />
-          </span>
+          </span> */}
           <span className="absolute right-1/2 -bottom-16 rounded-xl">
             <Image
               src={`/workspace-active-cycles/cta-r-2-${isDarkMode ? "dark" : "light"}.webp`}

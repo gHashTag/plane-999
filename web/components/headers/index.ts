@@ -21,3 +21,4 @@ export * from "./project-archived-issues";
 export * from "./project-issue-details";
 export * from "./user-profile";
 export * from "./workspace-active-cycles";
+export * from "./workspace-create-meet";

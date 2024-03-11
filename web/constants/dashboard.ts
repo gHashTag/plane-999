@@ -289,11 +289,19 @@ export const SIDEBAR_MENU_ITEMS: {
     Icon: CheckCircle,
   },
   {
-    key: "active-cycles",
-    label: "Active Cycles",
-    href: `/active-cycles`,
+    key: "create-meet",
+    label: "Create Meet",
+    href: `/create-meet`,
     access: EUserWorkspaceRoles.GUEST,
-    highlight: (pathname: string, baseUrl: string) => pathname === `${baseUrl}/active-cycles`,
+    highlight: (pathname: string, baseUrl: string) => pathname === `${baseUrl}/create-meet`,
     Icon: ContrastIcon,
   },
+  // {
+  //   key: "active-cycles",
+  //   label: "Active Cycles",
+  //   href: `/active-cycles`,
+  //   access: EUserWorkspaceRoles.GUEST,
+  //   highlight: (pathname: string, baseUrl: string) => pathname === `${baseUrl}/active-cycles`,
+  //   Icon: ContrastIcon,
+  // },
 ];
