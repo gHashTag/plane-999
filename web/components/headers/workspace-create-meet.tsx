@@ -16,7 +16,7 @@ export const WorkspaceCreateMeetHeader = observer(() => (
             type="text"
             link={
               <BreadcrumbLink
-                label="Create Meet"
+                label="Meets"
                 icon={<ContrastIcon className="h-4 w-4 text-custom-text-300 rotate-180" />}
               />
             }

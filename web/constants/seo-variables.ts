@@ -5,4 +5,4 @@ export const SITE_DESCRIPTION =
 export const SITE_KEYWORDS =
   "software development, plan, ship, software, accelerate, code management, release management, project management, issue tracking, agile, scrum, kanban, collaboration";
 export const SITE_URL = "https://dao999nft.com/";
-export const TWITTER_USER_NAME = "DAO 999 NFT | roject management toolmanagement tool.";
+export const TWITTER_USER_NAME = "DAO 999 NFT | project management toolmanagement tool.";

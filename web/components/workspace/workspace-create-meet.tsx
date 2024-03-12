@@ -1,16 +1,9 @@
 import React from "react";
 import { observer } from "mobx-react";
-import Image from "next/image";
-// icons
-import { Crown } from "lucide-react";
-// ui
-import { getButtonStyling } from "@plane/ui";
-// constants
-import { WORKSPACE_ACTIVE_CYCLES_DETAILS } from "constants/cycle";
 // helper
 import { cn } from "helpers/common.helper";
 // hooks
-import { useUser } from "hooks/store";
+import { useUser, useWorkspace} from "hooks/store";
 import { useRouter } from "next/navigation";
 import LandingCards from "@components/999/LandingCards/LandingCards";
 import SubCard from "@/components/999/LandingCards/SubCard";
@@ -18,26 +11,18 @@ import SubCard from "@/components/999/LandingCards/SubCard";
 export const WorkspaceCreateMeet = observer(() => {
   // store hooks
   const { currentUser } = useUser();
-
-  const isDarkMode = currentUser?.theme.theme === "dark";
-
+  const { currentWorkspace } = useWorkspace();
   const router = useRouter();
-  // const { workspace_slug: workspaceSlug, project_slug: projectId } = router.query as {
-  //   workspace_slug: string;
-  //   project_slug: string;
-  // };
-  // console.log(workspaceSlug, "workspaceSlug");
-  // console.log(projectId, "projectId");
   const getRoom = async () => {
-    router.push(`/[workspaceSlug]/create-meet/meets`);
+    router.push(`/${currentWorkspace?.slug}/create-meet/meets`);
   };
 
   const getSpace = async () => {
-    router.push(`/[workspaceSlug]/create-meet/audio-spaces`);
+    router.push(`/${currentWorkspace?.slug}/create-meet/audio-spaces`);
   };
 
   const getTokenGated = async () => {
-    router.push(`/[workspaceSlug]/create-meet/token-gated`);
+    router.push(`/${currentWorkspace?.slug}/create-meet/token-gated`);
   };
 
   return (

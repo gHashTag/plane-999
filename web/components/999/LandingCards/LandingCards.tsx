@@ -1,6 +1,6 @@
 import React from "react";
 
-import { cn } from "helpers/utils/utils";
+import { cn } from "@/helpers/999-utils/utils";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -17,7 +17,7 @@ const LandingCards: React.FC<CardsProps> = ({ children, title, type, className, 
 
   return (
     <div
-      className={cn("flex p-6 rounded-lg border border-custom-1 w-full", className)}
+      className={cn("border-custom-1 flex w-full rounded-lg border p-6", className)}
       onClick={() => {
         if (url) push(url);
       }}
@@ -32,7 +32,7 @@ const LandingCards: React.FC<CardsProps> = ({ children, title, type, className, 
             className="object-contain"
           />
         )}
-        <div className="text-xl font-medium text-rgb-2" style={{ color: "lime" }}>
+        <div className="text-rgb-2 text-xl font-medium" style={{ color: "lime" }}>
           {title}
         </div>
       </div>

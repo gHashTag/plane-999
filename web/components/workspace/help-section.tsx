@@ -4,7 +4,7 @@ import Link from "next/link";
 // headless ui
 import { Transition } from "@headlessui/react";
 // icons
-import { FileText, HelpCircle, MessagesSquare, MoveLeft, Zap } from "lucide-react";
+import { FileText, MessagesSquare, MoveLeft, Zap } from "lucide-react";
 // ui
 import { DiscordIcon, GithubIcon, Tooltip } from "@plane/ui";
 // hooks

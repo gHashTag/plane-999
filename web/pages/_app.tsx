@@ -1,3 +1,4 @@
+"use client";
 import { ReactElement } from "react";
 import Head from "next/head";
 import { AppProps } from "next/app";
@@ -13,6 +14,8 @@ import { THEMES } from "constants/themes";
 import { SITE_TITLE } from "constants/seo-variables";
 // mobx store provider
 import { StoreProvider } from "contexts/store-context";
+import { NextUIProvider } from "@nextui-org/react";
+import { HMSRoomProvider } from "@100mslive/react-sdk";
 
 import { AppProvider } from "lib/app-provider";
 // types
@@ -31,10 +34,15 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       <Head>
         <title>{SITE_TITLE}</title>
       </Head>
+
       <StoreProvider {...pageProps}>
-        <ThemeProvider themes={THEMES} defaultTheme="system">
-          <AppProvider>{getLayout(<Component {...pageProps} />)}</AppProvider>
-        </ThemeProvider>
+        <HMSRoomProvider>
+          <NextUIProvider>
+            <ThemeProvider themes={THEMES} defaultTheme="system">
+              <AppProvider>{getLayout(<Component {...pageProps} />)}</AppProvider>
+            </ThemeProvider>
+          </NextUIProvider>
+        </HMSRoomProvider>
       </StoreProvider>
     </>
   );

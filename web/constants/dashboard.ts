@@ -290,7 +290,7 @@ export const SIDEBAR_MENU_ITEMS: {
   },
   {
     key: "create-meet",
-    label: "Create Meet",
+    label: "Meets",
     href: `/create-meet`,
     access: EUserWorkspaceRoles.GUEST,
     highlight: (pathname: string, baseUrl: string) => pathname === `${baseUrl}/create-meet`,

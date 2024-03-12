@@ -1,15 +1,26 @@
-import { useEffect } from "react";
+import { useEffect, ReactElement } from "react";
+
 import { useRouter } from "next/router";
+// components
+import { PageHead } from "components/core";
+import { WorkspaceCreateMeetHeader } from "components/headers";
 
-const Meets = ({ roomId = "gcy-elue-bot" }) => {
+// types
+import { NextPageWithLayout } from "lib/types";
+// layouts
+import { useWorkspace } from "hooks/store";
+import { AppLayout } from "layouts/app-layout";
+
+const Meets: NextPageWithLayout = () => {
+  const roomId = "gcy-elue-bot";
   const router = useRouter();
-
+  const { currentWorkspace } = useWorkspace();
 
   useEffect(() => {
     const setRoute = async () => {
       try {
         router.push({
-          pathname: `/create-meet/audio-spaces/[roomId]`,
+          pathname: `/${currentWorkspace?.slug}/create-meet/audio-spaces/[roomId]`,
           query: { roomId },
         });
       } catch (error) {
@@ -19,6 +30,10 @@ const Meets = ({ roomId = "gcy-elue-bot" }) => {
 
     setRoute();
   }, []);
+};
+
+Meets.getLayout = function getLayout(page: ReactElement) {
+  return <AppLayout header={<WorkspaceCreateMeetHeader />}>{page}</AppLayout>;
 };
 
 export default Meets;

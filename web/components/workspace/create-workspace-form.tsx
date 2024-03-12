@@ -8,11 +8,12 @@ import { Button, CustomSelect, Input, TOAST_TYPE, setToast } from "@plane/ui";
 import { WORKSPACE_CREATED } from "constants/event-tracker";
 import { ORGANIZATION_SIZE, RESTRICTED_URLS } from "constants/workspace";
 // hooks
-import { useEventTracker, useWorkspace } from "hooks/store";
+import { useEventTracker, useUser, useWorkspace } from "hooks/store";
 // ui
 // types
-import { IWorkspace } from "@plane/types";
+import { IUser, IWorkspace } from "@plane/types";
 import { WorkspaceService } from "services/workspace.service";
+import { createRoom } from "@/helpers/999-utils/supabase/create-room";
 
 type Props = {
   onSubmit?: (res: IWorkspace) => Promise<void>;
@@ -50,6 +51,7 @@ export const CreateWorkspaceForm: FC<Props> = observer((props) => {
   // store hooks
   const { captureWorkspaceEvent } = useEventTracker();
   const { createWorkspace } = useWorkspace();
+  const { currentUser } = useUser() as { currentUser: IUser };
   // form info
   const {
     handleSubmit,
@@ -60,53 +62,59 @@ export const CreateWorkspaceForm: FC<Props> = observer((props) => {
   } = useForm<IWorkspace>({ defaultValues, mode: "onChange" });
 
   const handleCreateWorkspace = async (formData: IWorkspace) => {
-    await workspaceService
-      .workspaceSlugCheck(formData.slug)
-      .then(async (res) => {
-        if (res.status === true && !RESTRICTED_URLS.includes(formData.slug)) {
-          setSlugError(false);
+    console.log("formData", formData);
+    console.log(currentUser, "currentUser");
+    const id = currentUser?.id;
+    console.log(id, "id");
+    if (id) {
+      const response = await createRoom(formData, id);
+      console.log(response, "response");
+    }
 
-          await createWorkspace(formData)
-            .then(async (res) => {
-              captureWorkspaceEvent({
-                eventName: WORKSPACE_CREATED,
-                payload: {
-                  ...res,
-                  state: "SUCCESS",
-                  element: "Create workspace page",
-                },
-              });
-              setToast({
-                type: TOAST_TYPE.SUCCESS,
-                title: "Success!",
-                message: "Workspace created successfully.",
-              });
+    //     if (res.status === true && !RESTRICTED_URLS.includes(formData.slug)) {
+    //       setSlugError(false);
 
-              if (onSubmit) await onSubmit(res);
-            })
-            .catch(() => {
-              captureWorkspaceEvent({
-                eventName: WORKSPACE_CREATED,
-                payload: {
-                  state: "FAILED",
-                  element: "Create workspace page",
-                },
-              });
-              setToast({
-                type: TOAST_TYPE.ERROR,
-                title: "Error!",
-                message: "Workspace could not be created. Please try again.",
-              });
-            });
-        } else setSlugError(true);
-      })
-      .catch(() => {
-        setToast({
-          type: TOAST_TYPE.ERROR,
-          title: "Error!",
-          message: "Some error occurred while creating workspace. Please try again.",
-        });
-      });
+    //       await createWorkspace(formData)
+    //         .then(async (res) => {
+    //           captureWorkspaceEvent({
+    //             eventName: WORKSPACE_CREATED,
+    //             payload: {
+    //               ...res,
+    //               state: "SUCCESS",
+    //               element: "Create workspace page",
+    //             },
+    //           });
+    //           setToast({
+    //             type: TOAST_TYPE.SUCCESS,
+    //             title: "Success!",
+    //             message: "Workspace created successfully.",
+    //           });
+
+    //           if (onSubmit) await onSubmit(res);
+    //         })
+    //         .catch(() => {
+    //           captureWorkspaceEvent({
+    //             eventName: WORKSPACE_CREATED,
+    //             payload: {
+    //               state: "FAILED",
+    //               element: "Create workspace page",
+    //             },
+    //           });
+    //           setToast({
+    //             type: TOAST_TYPE.ERROR,
+    //             title: "Error!",
+    //             message: "Workspace could not be created. Please try again.",
+    //           });
+    //         });
+    //     } else setSlugError(true);
+    //   })
+    //   .catch(() => {
+    //     setToast({
+    //       type: TOAST_TYPE.ERROR,
+    //       title: "Error!",
+    //       message: "Some error occurred while creating workspace. Please try again.",
+    //     });
+    //   });
   };
 
   useEffect(

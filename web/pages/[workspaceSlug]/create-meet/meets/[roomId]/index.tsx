@@ -1,10 +1,21 @@
-import { useState, useEffect } from "react";
-import { selectIsConnectedToRoom, useHMSActions, useHMSStore } from "@100mslive/react-sdk";
-import { HMSPrebuilt } from "@100mslive/roomkit-react";
-import { useRouter } from "next/router";
+import { useState, useEffect, ReactElement } from "react";
+import { observer } from "mobx-react";
+// layouts
+import { AppLayout } from "layouts/app-layout";
+import { WorkspaceCreateMeetHeader } from "components/headers";
+// types
+import { NextPageWithLayout } from "lib/types";
 
-const Rooms = () => {
+import { selectIsConnectedToRoom, useHMSActions, useHMSStore } from "@100mslive/react-sdk";
+import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+import { useUser } from "hooks/store";
+
+const HMSPrebuilt = dynamic(() => import("@100mslive/roomkit-react").then((mod) => mod.HMSPrebuilt), { ssr: false });
+
+const Rooms: NextPageWithLayout = observer(() => {
   const router = useRouter();
+  const { currentUser } = useUser();
   const { roomId } = router.query as { roomId: string };
 
   const [token, setToken] = useState<string | undefined>(undefined);
@@ -48,7 +59,21 @@ const Rooms = () => {
     };
   }, [hmsActions, isConnected]);
 
-  return <>{token && <HMSPrebuilt authToken={token} roomCode={roomId} options={{ userName: "test" }} />}</>;
+  return (
+    <>
+      {token && (
+        <HMSPrebuilt
+          authToken={token}
+          roomCode={roomId}
+          options={{ userName: currentUser?.first_name + " " + currentUser?.last_name }}
+        />
+      )}
+    </>
+  );
+});
+
+Rooms.getLayout = function getLayout(page: ReactElement) {
+  return <AppLayout header={<WorkspaceCreateMeetHeader />}>{page}</AppLayout>;
 };
 
 export default Rooms;
