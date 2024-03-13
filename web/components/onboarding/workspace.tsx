@@ -9,7 +9,9 @@ import { useEventTracker, useUser, useWorkspace } from "hooks/store";
 // services
 import { WorkspaceService } from "services/workspace.service";
 import { IUser, IWorkspace, TOnboardingSteps } from "@plane/types";
-// constants
+
+// helpers
+import { createRoom } from "@/helpers/999-utils/supabase/create-room";
 
 type Props = {
   stepChange: (steps: Partial<TOnboardingSteps>) => Promise<void>;
@@ -30,11 +32,26 @@ export const Workspace: React.FC<Props> = (props) => {
   const [slugError, setSlugError] = useState(false);
   const [invalidSlug, setInvalidSlug] = useState(false);
   // store hooks
-  const { updateCurrentUser } = useUser();
+  const { updateCurrentUser, currentUser } = useUser();
+
   const { createWorkspace, fetchWorkspaces, workspaces } = useWorkspace();
   const { captureWorkspaceEvent } = useEventTracker();
 
   const handleCreateWorkspace = async (formData: IWorkspace) => {
+    const id = currentUser?.id;
+    const email = currentUser?.email;
+
+    if (id && email) {
+      const response = await createRoom(id, formData.name, email);
+      if (response.error) {
+        setToast({
+          type: TOAST_TYPE.ERROR,
+          title: "Error!",
+          message: response.error,
+        });
+      }
+    }
+
     if (isSubmitting) return;
 
     await workspaceService

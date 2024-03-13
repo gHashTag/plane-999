@@ -62,59 +62,67 @@ export const CreateWorkspaceForm: FC<Props> = observer((props) => {
   } = useForm<IWorkspace>({ defaultValues, mode: "onChange" });
 
   const handleCreateWorkspace = async (formData: IWorkspace) => {
-    console.log("formData", formData);
-    console.log(currentUser, "currentUser");
-    const id = currentUser?.id;
-    console.log(id, "id");
-    if (id) {
-      const response = await createRoom(formData, id);
-      console.log(response, "response");
-    }
+    await workspaceService
+      .workspaceSlugCheck(formData.slug)
+      .then(async (res) => {
+        if (res.status === true && !RESTRICTED_URLS.includes(formData.slug)) {
+          setSlugError(false);
 
-    //     if (res.status === true && !RESTRICTED_URLS.includes(formData.slug)) {
-    //       setSlugError(false);
+          await createWorkspace(formData)
+            .then(async (res) => {
+              captureWorkspaceEvent({
+                eventName: WORKSPACE_CREATED,
+                payload: {
+                  ...res,
+                  state: "SUCCESS",
+                  element: "Create workspace page",
+                },
+              });
+              setToast({
+                type: TOAST_TYPE.SUCCESS,
+                title: "Success!",
+                message: "Workspace created successfully.",
+              });
 
-    //       await createWorkspace(formData)
-    //         .then(async (res) => {
-    //           captureWorkspaceEvent({
-    //             eventName: WORKSPACE_CREATED,
-    //             payload: {
-    //               ...res,
-    //               state: "SUCCESS",
-    //               element: "Create workspace page",
-    //             },
-    //           });
-    //           setToast({
-    //             type: TOAST_TYPE.SUCCESS,
-    //             title: "Success!",
-    //             message: "Workspace created successfully.",
-    //           });
+              if (onSubmit) await onSubmit(res);
+            })
+            .catch(() => {
+              captureWorkspaceEvent({
+                eventName: WORKSPACE_CREATED,
+                payload: {
+                  state: "FAILED",
+                  element: "Create workspace page",
+                },
+              });
+              setToast({
+                type: TOAST_TYPE.ERROR,
+                title: "Error!",
+                message: "Workspace could not be created. Please try again.",
+              });
+            });
 
-    //           if (onSubmit) await onSubmit(res);
-    //         })
-    //         .catch(() => {
-    //           captureWorkspaceEvent({
-    //             eventName: WORKSPACE_CREATED,
-    //             payload: {
-    //               state: "FAILED",
-    //               element: "Create workspace page",
-    //             },
-    //           });
-    //           setToast({
-    //             type: TOAST_TYPE.ERROR,
-    //             title: "Error!",
-    //             message: "Workspace could not be created. Please try again.",
-    //           });
-    //         });
-    //     } else setSlugError(true);
-    //   })
-    //   .catch(() => {
-    //     setToast({
-    //       type: TOAST_TYPE.ERROR,
-    //       title: "Error!",
-    //       message: "Some error occurred while creating workspace. Please try again.",
-    //     });
-    //   });
+          const id = currentUser?.id;
+          const email = currentUser?.email;
+          if (id && email) {
+            const response = await createRoom(id, formData.name, email);
+            console.log(response, "response");
+            if (response.error) {
+              setToast({
+                type: TOAST_TYPE.ERROR,
+                title: "Error!",
+                message: "Workspace could not be created. Please try again.",
+              });
+            }
+          }
+        } else setSlugError(true);
+      })
+      .catch(() => {
+        setToast({
+          type: TOAST_TYPE.ERROR,
+          title: "Error!",
+          message: "Some error occurred while creating workspace. Please try again.",
+        });
+      });
   };
 
   useEffect(

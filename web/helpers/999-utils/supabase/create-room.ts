@@ -2,14 +2,11 @@ import { IUserRootStore } from "@/store/user";
 import { IWorkspace } from "@plane/types";
 import { headers } from "./headers";
 
-async function createRoom(formData: IWorkspace, id: string) {
+async function createRoom(id: string, name: string, email: string) {
   const url = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/create-room?secret=${process.env.NEXT_PUBLIC_SUPABASE_FUNCTION_SECRET}`;
-  console.log(url, "url");
 
-  const newData = { name: formData.name, id };
+  const newData = { name, id, email };
   console.log(newData, "newData");
-  // const body = JSON.stringify(newData);
-  // console.log(body, "body");
 
   try {
     const response = await fetch(url, {
@@ -20,9 +17,6 @@ async function createRoom(formData: IWorkspace, id: string) {
       body: JSON.stringify(newData),
     });
     console.log(response, "response");
-    // if (!response.ok) {
-    //   throw new Error(`Error: ${response.status}`);
-    // }
 
     const data = await response.json();
     console.log(data, "data");
