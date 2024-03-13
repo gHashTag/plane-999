@@ -11,7 +11,7 @@ import { WorkspaceService } from "services/workspace.service";
 import { IUser, IWorkspace, TOnboardingSteps } from "@plane/types";
 
 // helpers
-import { createRoom } from "@/helpers/999-utils/supabase/create-room";
+import { createRoom } from "@/services/supabase/999-utils/supabase/create-room";
 
 type Props = {
   stepChange: (steps: Partial<TOnboardingSteps>) => Promise<void>;

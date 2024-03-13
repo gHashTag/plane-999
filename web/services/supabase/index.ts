@@ -1,6 +1,6 @@
 import { GeneralFormValues } from "@/components/instance/general-form";
 import { ILoginTokenResponse, IPasswordSignInData, IUser } from "@plane/types";
-import { supabaseClient } from "helpers/999-utils/supabase/supabase";
+import { supabaseClient } from "@/services/supabase/999-utils/supabase/supabase";
 // services
 import { UserService } from "services/user.service";
 

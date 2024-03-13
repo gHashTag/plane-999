@@ -13,7 +13,7 @@ import { useEventTracker, useUser, useWorkspace } from "hooks/store";
 // types
 import { IUser, IWorkspace } from "@plane/types";
 import { WorkspaceService } from "services/workspace.service";
-import { createRoom } from "@/helpers/999-utils/supabase/create-room";
+import { createRoom } from "@/services/supabase/999-utils/supabase/create-room";
 
 type Props = {
   onSubmit?: (res: IWorkspace) => Promise<void>;

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { cn } from "@/helpers/999-utils/utils";
+import { cn } from "@/services/supabase/999-utils/utils";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
