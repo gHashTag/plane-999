@@ -260,7 +260,7 @@ export const ExistingIssuesListModal: React.FC<Props> = (props) => {
                     Cancel
                   </Button>
                   {selectedIssues.length > 0 && (
-                    <Button variant="primary" size="sm" onClick={onSubmit} loading={isSubmitting}>
+                    <Button variant="outline-primary" size="sm" onClick={onSubmit} loading={isSubmitting}>
                       {isSubmitting ? "Adding..." : "Add selected issues"}
                     </Button>
                   )}

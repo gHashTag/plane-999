@@ -33,7 +33,7 @@ export const DashboardProjectEmptyState = observer(() => {
       {canCreateProject && (
         <div className="flex justify-center">
           <Button
-            variant="primary"
+            variant="outline-primary"
             onClick={() => {
               setTrackElement("Project empty state");
               toggleCreateProjectModal(true);

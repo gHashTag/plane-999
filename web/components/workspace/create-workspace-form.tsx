@@ -237,7 +237,7 @@ export const CreateWorkspaceForm: FC<Props> = observer((props) => {
 
       <div className="flex items-center gap-4">
         {secondaryButton}
-        <Button variant="primary" type="submit" size="md" disabled={!isValid} loading={isSubmitting}>
+        <Button variant="outline-primary" type="submit" size="md" disabled={!isValid} loading={isSubmitting}>
           {isSubmitting ? primaryButtonText.loading : primaryButtonText.default}
         </Button>
         {!secondaryButton && (

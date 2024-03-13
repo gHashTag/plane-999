@@ -138,7 +138,14 @@ export const SignUpPasswordForm: React.FC<Props> = observer((props) => {
             This password will continue to be your account{"'"}s password.
           </p>
         </div>
-        <Button type="submit" variant="primary" className="w-full" size="xl" disabled={!isValid} loading={isSubmitting}>
+        <Button
+          type="submit"
+          variant="outline-primary"
+          className="w-full"
+          size="xl"
+          disabled={!isValid}
+          loading={isSubmitting}
+        >
           Create account
         </Button>
         <p className="text-xs text-onboarding-text-200">

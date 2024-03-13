@@ -172,8 +172,8 @@ export const GptAssistantPopover: React.FC<Props> = (props) => {
   const generateResponseButtonText = isSubmitting
     ? "Generating response..."
     : response === ""
-      ? "Generate response"
-      : "Generate again";
+    ? "Generate response"
+    : "Generate again";
 
   return (
     <Popover as="div" className={`relative w-min text-left`}>
@@ -253,7 +253,12 @@ export const GptAssistantPopover: React.FC<Props> = (props) => {
               <Button variant="neutral-primary" size="sm" onClick={onClose}>
                 Close
               </Button>
-              <Button variant="primary" size="sm" onClick={handleSubmit(handleAIResponse)} loading={isSubmitting}>
+              <Button
+                variant="outline-primary"
+                size="sm"
+                onClick={handleSubmit(handleAIResponse)}
+                loading={isSubmitting}
+              >
                 {generateResponseButtonText}
               </Button>
             </div>

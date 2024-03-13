@@ -37,6 +37,8 @@ import { FileService } from "services/file.service";
 // services
 // types
 import type { IUser } from "@plane/types";
+// supabase
+import { upadateUserSupabase } from "@/services/supabase";
 
 const defaultValues: Partial<IUser> = {
   avatar: "",
@@ -87,6 +89,8 @@ const ProfileSettingsPage: NextPageWithLayout = observer(() => {
       user_timezone: formData.user_timezone,
     };
 
+    await upadateUserSupabase(payload);
+
     const updateCurrentUserDetail = updateCurrentUser(payload).finally(() => setIsLoading(false));
     setPromiseToast(updateCurrentUserDetail, {
       loading: "Updating...",
@@ -100,9 +104,9 @@ const ProfileSettingsPage: NextPageWithLayout = observer(() => {
       },
     });
 
-    // setTimeout(() => {
-    //   setIsLoading(false);
-    // }, 300);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 300);
   };
 
   const handleDelete = (url: string | null | undefined, updateUser: boolean = false) => {
@@ -415,7 +419,7 @@ const ProfileSettingsPage: NextPageWithLayout = observer(() => {
                   </div>
 
                   <div className="flex items-center justify-between py-2">
-                    <Button variant="primary" type="submit" loading={isLoading}>
+                    <Button variant="outline-primary" type="submit" loading={isLoading}>
                       {isLoading ? "Saving..." : "Save changes"}
                     </Button>
                   </div>

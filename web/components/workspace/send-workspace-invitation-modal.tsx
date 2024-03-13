@@ -208,7 +208,7 @@ export const SendWorkspaceInvitationModal: React.FC<Props> = observer((props) =>
                       <Button variant="neutral-primary" size="sm" onClick={handleClose}>
                         Cancel
                       </Button>
-                      <Button variant="primary" size="sm" type="submit" loading={isSubmitting}>
+                      <Button variant="outline-primary" size="sm" type="submit" loading={isSubmitting}>
                         {isSubmitting ? "Sending invitation" : "Send invitation"}
                       </Button>
                     </div>

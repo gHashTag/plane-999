@@ -116,7 +116,7 @@ export const InstanceGeneralForm: FC<IInstanceGeneralForm> = (props) => {
       </div> */}
 
       <div className="flex items-center py-1">
-        <Button variant="primary" onClick={handleSubmit(onSubmit)} loading={isSubmitting}>
+        <Button variant="outline-primary" onClick={handleSubmit(onSubmit)} loading={isSubmitting}>
           {isSubmitting ? "Saving..." : "Save changes"}
         </Button>
       </div>

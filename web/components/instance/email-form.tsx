@@ -246,7 +246,7 @@ export const InstanceEmailForm: FC<IInstanceEmailForm> = (props) => {
       </div>
 
       <div className="flex max-w-4xl items-center py-1">
-        <Button variant="primary" onClick={handleSubmit(onSubmit)} loading={isSubmitting}>
+        <Button variant="outline-primary" onClick={handleSubmit(onSubmit)} loading={isSubmitting}>
           {isSubmitting ? "Saving..." : "Save changes"}
         </Button>
       </div>

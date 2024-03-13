@@ -225,6 +225,7 @@ export const ProjectViewIssuesHeader: React.FC = observer(() => {
         </FiltersDropdown>
         {canUserCreateIssue && (
           <Button
+            variant="outline-primary"
             onClick={() => {
               setTrackElement("PROJECT_VIEW_PAGE_HEADER");
               toggleCreateIssueModal(true, EIssuesStoreType.PROJECT_VIEW);

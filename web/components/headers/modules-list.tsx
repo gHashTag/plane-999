@@ -84,7 +84,7 @@ export const ModulesListHeader: React.FC = observer(() => {
           </div>
           {canUserCreateModule && (
             <Button
-              variant="primary"
+              variant="outline-primary"
               size="sm"
               prependIcon={<Plus />}
               onClick={() => {

@@ -107,7 +107,7 @@ export const ProjectViewAppliedFiltersRoot: React.FC = observer(() => {
         <>
           <div />
           <div className="flex flex-shrink-0 items-center justify-center">
-            <Button variant="primary" size="sm" onClick={handleUpdateView}>
+            <Button variant="outline-primary" size="sm" onClick={handleUpdateView}>
               Update view
             </Button>
           </div>

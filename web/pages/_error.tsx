@@ -54,7 +54,7 @@ const CustomErrorComponent = () => {
             </p>
           </div>
           <div className="flex items-center justify-center gap-2">
-            <Button variant="primary" size="md" onClick={() => router.reload()}>
+            <Button variant="outline-primary" size="md" onClick={() => router.reload()}>
               Refresh
             </Button>
             <Button variant="neutral-primary" size="md" onClick={handleSignOut}>

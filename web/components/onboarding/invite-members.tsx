@@ -445,7 +445,7 @@ export const InviteMembers: React.FC<Props> = (props) => {
           </div>
           <div className="flex items-center gap-4">
             <Button
-              variant="primary"
+              variant="outline-primary"
               type="submit"
               disabled={isInvitationDisabled || !isValid}
               loading={isSubmitting}

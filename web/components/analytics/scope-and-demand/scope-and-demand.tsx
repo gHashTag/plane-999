@@ -95,7 +95,7 @@ export const ScopeAndDemand: React.FC<Props> = (props) => {
           <div className="space-y-4 text-custom-text-200">
             <p className="text-sm">There was some error in fetching the data.</p>
             <div className="flex items-center justify-center gap-2">
-              <Button variant="primary" onClick={() => mutateDefaultAnalytics()}>
+              <Button variant="outline-primary" onClick={() => mutateDefaultAnalytics()}>
                 Refresh
               </Button>
             </div>

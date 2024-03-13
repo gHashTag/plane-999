@@ -38,12 +38,12 @@ export const SingleExport: FC<Props> = ({ service, refreshing }) => {
               service.status === "completed"
                 ? "bg-green-500/20 text-green-500"
                 : service.status === "processing"
-                  ? "bg-yellow-500/20 text-yellow-500"
-                  : service.status === "failed"
-                    ? "bg-red-500/20 text-red-500"
-                    : service.status === "expired"
-                      ? "bg-orange-500/20 text-orange-500"
-                      : ""
+                ? "bg-yellow-500/20 text-yellow-500"
+                : service.status === "failed"
+                ? "bg-red-500/20 text-red-500"
+                : service.status === "expired"
+                ? "bg-orange-500/20 text-orange-500"
+                : ""
             }`}
           >
             {refreshing ? "Refreshing..." : service.status}
@@ -59,7 +59,7 @@ export const SingleExport: FC<Props> = ({ service, refreshing }) => {
           {service.status == "completed" && (
             <div>
               <a target="_blank" href={service?.url} rel="noopener noreferrer">
-                <Button variant="primary" className="w-full">
+                <Button variant="outline-primary" className="w-full">
                   {isLoading ? "Downloading..." : "Download"}
                 </Button>
               </a>

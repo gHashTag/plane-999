@@ -79,7 +79,13 @@ export const AcceptIssueModal: React.FC<Props> = ({ isOpen, onClose, data, onSub
                     <Button variant="neutral-primary" size="sm" onClick={handleClose}>
                       Cancel
                     </Button>
-                    <Button variant="primary" size="sm" tabIndex={1} onClick={handleAccept} loading={isAccepting}>
+                    <Button
+                      variant="outline-primary"
+                      size="sm"
+                      tabIndex={1}
+                      onClick={handleAccept}
+                      loading={isAccepting}
+                    >
                       {isAccepting ? "Accepting..." : "Accept Issue"}
                     </Button>
                   </div>

@@ -3,13 +3,14 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 // images
 import instanceNotReady from "public/instance/plane-instance-not-ready.webp";
-import PlaneBlackLogo from "public/plane-logos/black-horizontal-with-blue-logo.svg";
-import PlaneWhiteLogo from "public/plane-logos/white-horizontal-with-blue-logo.svg";
+// import PlaneBlackLogo from "public/plane-logos/black-horizontal-with-blue-logo.svg";
+import BluePlaneLogoWithoutText from "public/plane-logos/blue-without-text.png";
+// import PlaneWhiteLogo from "public/plane-logos/white-horizontal-with-blue-logo.svg";
 
 export const InstanceNotReady = () => {
   const { resolvedTheme } = useTheme();
 
-  const planeLogo = resolvedTheme === "dark" ? PlaneWhiteLogo : PlaneBlackLogo;
+  const planeLogo = resolvedTheme === "dark" ? BluePlaneLogoWithoutText : BluePlaneLogoWithoutText;
 
   return (
     <div className="h-screen w-full overflow-y-auto bg-onboarding-gradient-100">
@@ -17,7 +18,7 @@ export const InstanceNotReady = () => {
         <div className="mx-auto h-full rounded-t-md border-x border-t border-custom-border-100 bg-onboarding-gradient-100 px-4 pt-4 shadow-sm sm:w-4/5 md:w-2/3">
           <div className="relative h-full rounded-t-md bg-onboarding-gradient-200 px-7 sm:px-0">
             <div className="flex items-center justify-center py-10">
-              <Image src={planeLogo} className="h-[44px] w-full" alt="DAO 999 NFT logo" />
+              <Image src={BluePlaneLogoWithoutText} className="h-[44px] w-full" alt="DAO 999 NFT logo" />
             </div>
             <div className="mt-20">
               <Image src={instanceNotReady} className="w-full" alt="Instance not ready" />

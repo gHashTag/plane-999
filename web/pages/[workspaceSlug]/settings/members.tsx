@@ -109,7 +109,7 @@ const WorkspaceMembersSettingsPage: NextPageWithLayout = observer(() => {
             />
           </div>
           {hasAddMemberPermission && (
-            <Button variant="primary" size="sm" onClick={() => setInviteModal(true)}>
+            <Button variant="outline-primary" size="sm" onClick={() => setInviteModal(true)}>
               Add member
             </Button>
           )}

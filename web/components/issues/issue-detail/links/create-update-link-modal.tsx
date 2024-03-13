@@ -146,14 +146,14 @@ export const IssueLinkCreateUpdateModal: FC<TIssueLinkCreateEditModal> = (props)
                     <Button variant="neutral-primary" size="sm" onClick={onClose}>
                       Cancel
                     </Button>
-                    <Button variant="primary" size="sm" type="submit" loading={isSubmitting}>
+                    <Button variant="outline-primary" size="sm" type="submit" loading={isSubmitting}>
                       {preloadedData?.id
                         ? isSubmitting
                           ? "Updating Link..."
                           : "Update Link"
                         : isSubmitting
-                          ? "Adding Link..."
-                          : "Add Link"}
+                        ? "Adding Link..."
+                        : "Add Link"}
                     </Button>
                   </div>
                 </form>

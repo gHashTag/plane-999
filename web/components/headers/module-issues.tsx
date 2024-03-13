@@ -206,7 +206,9 @@ export const ModuleIssuesHeader: React.FC = observer(() => {
                     className="ml-1.5 flex-shrink-0"
                     placement="bottom-start"
                   >
-                    {projectModuleIds?.map((moduleId) => <ModuleDropdownOption key={moduleId} moduleId={moduleId} />)}
+                    {projectModuleIds?.map((moduleId) => (
+                      <ModuleDropdownOption key={moduleId} moduleId={moduleId} />
+                    ))}
                   </CustomMenu>
                 }
               />
@@ -256,6 +258,7 @@ export const ModuleIssuesHeader: React.FC = observer(() => {
                   Analytics
                 </Button>
                 <Button
+                  variant="outline-primary"
                   className="hidden sm:flex"
                   onClick={() => {
                     setTrackElement("Module issues page");

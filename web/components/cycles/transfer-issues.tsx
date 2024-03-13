@@ -48,7 +48,7 @@ export const TransferIssues: React.FC<Props> = (props) => {
       {isEmpty(cycleDetails?.progress_snapshot) && transferableIssuesCount > 0 && (
         <div>
           <Button
-            variant="primary"
+            variant="outline-primary"
             prependIcon={<TransferIcon color="white" />}
             onClick={handleClick}
             disabled={disabled}

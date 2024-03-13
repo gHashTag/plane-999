@@ -17,8 +17,9 @@ import { UserAuthWrapper } from "layouts/auth-layout";
 // ui
 import { Button, TOAST_TYPE, setToast } from "@plane/ui";
 // images
-import BlackHorizontalLogo from "public/plane-logos/black-horizontal-with-blue-logo.svg";
-import WhiteHorizontalLogo from "public/plane-logos/white-horizontal-with-blue-logo.svg";
+import BluePlaneLogoWithoutText from "public/plane-logos/blue-without-text.png";
+// import BlackHorizontalLogo from "public/plane-logos/black-horizontal-with-blue-logo.svg";
+// import WhiteHorizontalLogo from "public/plane-logos/white-horizontal-with-blue-logo.svg";
 import emptyInvitation from "public/empty-state/invitation.svg";
 // helpers
 import { truncateText } from "helpers/string.helper";
@@ -132,9 +133,9 @@ const UserInvitationsPage: NextPageWithLayout = observer(() => {
           <div className="absolute left-5 top-1/2 grid -translate-y-1/2 place-items-center bg-custom-background-100 px-3 sm:left-1/2 sm:top-12 sm:-translate-x-[15px] sm:translate-y-0 sm:px-0 sm:py-5 md:left-1/3">
             <div className="h-[30px] w-[133px]">
               {theme === "light" ? (
-                <Image src={BlackHorizontalLogo} alt="DAO 999 NFT black logo" />
+                <Image src={BluePlaneLogoWithoutText} alt="DAO 999 NFT black logo" />
               ) : (
-                <Image src={WhiteHorizontalLogo} alt="DAO 999 NFT white logo" />
+                <Image src={BluePlaneLogoWithoutText} alt="DAO 999 NFT white logo" />
               )}
             </div>
           </div>

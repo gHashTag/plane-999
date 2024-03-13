@@ -10,7 +10,7 @@ import {
   IMagicSignInData,
   IPasswordSignInData,
 } from "@plane/types";
-import { supabaseClient } from "helpers/999-utils/supabase/supabase";
+
 import { instanceAdminSignInSupabase } from "./supabase";
 
 export class AuthService extends APIService {

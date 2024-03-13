@@ -94,7 +94,7 @@ export const SetPasswordLink: React.FC<Props> = (props) => {
             )}
           />
         </div>
-        <Button type="submit" variant="primary" className="w-full" size="xl" disabled={!isValid} loading={isSubmitting}>
+        <Button type="submit" variant="outline-primary" className="w-full" size="xl" disabled={!isValid} loading={isSubmitting}>
           {isSubmitting ? "Sending new link" : "Get link again"}
         </Button>
       </form>

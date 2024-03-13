@@ -190,7 +190,7 @@ export const Workspace: React.FC<Props> = (props) => {
           <span className="text-sm text-red-500">{`URL can only contain ( - ), ( _ ) & alphanumeric characters.`}</span>
         )}
       </div>
-      <Button variant="primary" type="submit" size="md">
+      <Button variant="outline-primary" type="submit" size="md">
         {isSubmitting ? "Creating..." : "Make it live"}
       </Button>
     </form>

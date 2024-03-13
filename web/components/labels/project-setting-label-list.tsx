@@ -92,7 +92,7 @@ export const ProjectSettingsLabelList: React.FC = observer(() => {
       />
       <div className="flex items-center justify-between border-b border-custom-border-100 py-3.5">
         <h3 className="text-xl font-medium">Labels</h3>
-        <Button variant="primary" onClick={newLabel} size="sm">
+        <Button variant="outline-primary" onClick={newLabel} size="sm">
           Add label
         </Button>
       </div>

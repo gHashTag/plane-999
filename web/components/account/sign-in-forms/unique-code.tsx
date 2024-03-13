@@ -203,12 +203,19 @@ export const SignInUniqueCodeForm: React.FC<Props> = (props) => {
               {resendTimerCode > 0
                 ? `Request new code in ${resendTimerCode}s`
                 : isRequestingNewCode
-                  ? "Requesting new code"
-                  : "Request new code"}
+                ? "Requesting new code"
+                : "Request new code"}
             </button>
           </div>
         </div>
-        <Button type="submit" variant="primary" className="w-full" size="xl" disabled={!isValid} loading={isSubmitting}>
+        <Button
+          type="submit"
+          variant="outline-primary"
+          className="w-full"
+          size="xl"
+          disabled={!isValid}
+          loading={isSubmitting}
+        >
           {submitButtonText}
         </Button>
       </form>

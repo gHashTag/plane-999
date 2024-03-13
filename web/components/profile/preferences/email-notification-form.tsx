@@ -156,7 +156,7 @@ export const EmailNotificationForm: FC<IEmailNotificationFormProps> = (props) =>
         </div>
       </div>
       <div className="flex items-center py-12">
-        <Button variant="primary" onClick={handleSubmit(onSubmit)} loading={isSubmitting} disabled={!isDirty}>
+        <Button variant="outline-primary" onClick={handleSubmit(onSubmit)} loading={isSubmitting} disabled={!isDirty}>
           {isSubmitting ? "Saving..." : "Save changes"}
         </Button>
       </div>

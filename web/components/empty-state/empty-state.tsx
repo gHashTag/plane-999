@@ -62,7 +62,7 @@ export const EmptyState: React.FC<EmptyStateProps> = (props) => {
 
     const commonProps = {
       size: size,
-      variant: "primary" as TButtonVariant,
+      variant: "outline-primary" as TButtonVariant,
       prependIcon: primaryButton.icon,
       onClick: primaryButtonOnClick ? primaryButtonOnClick : undefined,
       disabled: !isEditingAllowed,

@@ -756,7 +756,7 @@ export const IssueFormRoot: FC<IssueFormProps> = observer((props) => {
             )}
 
             <Button
-              variant="primary"
+              variant="outline-primary"
               type="submit"
               size="sm"
               loading={isSubmitting}

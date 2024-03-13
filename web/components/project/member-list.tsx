@@ -47,7 +47,7 @@ export const ProjectMemberList: React.FC = observer(() => {
           />
         </div>
         <Button
-          variant="primary"
+          variant="outline-primary"
           onClick={() => {
             setTrackElement("PROJECT_SETTINGS_MEMBERS_PAGE_HEADER");
             setInviteModal(true);

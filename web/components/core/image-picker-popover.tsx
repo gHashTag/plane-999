@@ -207,7 +207,7 @@ export const ImagePickerPopover: React.FC<Props> = observer((props) => {
                           />
                         )}
                       />
-                      <Button variant="primary" onClick={() => setSearchParams(formData.search)} size="sm">
+                      <Button variant="outline-primary" onClick={() => setSearchParams(formData.search)} size="sm">
                         Search
                       </Button>
                     </div>

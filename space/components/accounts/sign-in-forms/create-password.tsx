@@ -126,7 +126,7 @@ export const CreatePasswordForm: React.FC<Props> = (props) => {
             />
           )}
         />
-        <Button type="submit" variant="primary" className="w-full" size="xl" disabled={!isValid} loading={isSubmitting}>
+        <Button type="submit" variant="outline-primary" className="w-full" size="xl" disabled={!isValid} loading={isSubmitting}>
           {isOnboarded ? "Go to board" : "Set up profile"}
         </Button>
         <p className="text-xs text-onboarding-text-200">

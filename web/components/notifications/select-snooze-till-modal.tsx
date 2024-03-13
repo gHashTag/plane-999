@@ -253,7 +253,7 @@ export const SnoozeNotificationModal: FC<SnoozeModalProps> = (props) => {
                       <Button variant="neutral-primary" size="sm" onClick={handleClose}>
                         Cancel
                       </Button>
-                      <Button variant="primary" size="sm" type="submit" loading={isSubmitting}>
+                      <Button variant="outline-primary" size="sm" type="submit" loading={isSubmitting}>
                         {isSubmitting ? "Submitting..." : "Submit"}
                       </Button>
                     </div>

@@ -56,7 +56,7 @@ export const PeekOverviewIssueActivity: React.FC<Props> = observer(() => {
                 Sign in to add your comment
               </p>
               <Link href={`/?next_path=${router.asPath}`}>
-                <Button variant="primary">Sign in</Button>
+                <Button variant="outline-primary">Sign in</Button>
               </Link>
             </div>
           )}

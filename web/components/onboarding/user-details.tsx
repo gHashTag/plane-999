@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite";
 import Image from "next/image";
 import { Controller, useForm } from "react-hook-form";
 import { Camera, User2 } from "lucide-react";
-import { Button, Input } from "@plane/ui";
+import { Button, Input, TOAST_TYPE, setToast } from "@plane/ui";
 // components
 import { UserImageUploadModal } from "components/core";
 import { OnboardingSidebar, OnboardingStepIndicator } from "components/onboarding";
@@ -17,6 +17,9 @@ import IssuesSvg from "public/onboarding/onboarding-issues.webp";
 import { FileService } from "services/file.service";
 // types
 import { IUser } from "@plane/types";
+
+// supabase
+import { upadateUserSupabase } from "@/services/supabase";
 
 const defaultValues: Partial<IUser> = {
   first_name: "",
@@ -79,6 +82,22 @@ export const UserDetails: React.FC<Props> = observer((props) => {
         profile_complete: true,
       },
     };
+
+    try {
+      await upadateUserSupabase(payload);
+      setToast({
+        type: TOAST_TYPE.SUCCESS,
+        title: "Success!",
+        message: "Workspace created successfully.",
+      });
+    } catch (error) {
+      console.error("Ошибка при обновлении текущего пользователя:", error);
+      setToast({
+        type: TOAST_TYPE.ERROR,
+        title: "Error!",
+        message: "Workspace could not be created. Please try again.",
+      });
+    }
 
     await updateCurrentUser(payload)
       .then(() => {
@@ -235,7 +254,7 @@ export const UserDetails: React.FC<Props> = observer((props) => {
               />
             </div>
 
-            <Button variant="primary" type="submit" size="md" disabled={!isValid} loading={isSubmitting}>
+            <Button variant="outline-primary" type="submit" size="md" disabled={!isValid} loading={isSubmitting}>
               {isSubmitting ? "Updating..." : "Continue"}
             </Button>
           </form>

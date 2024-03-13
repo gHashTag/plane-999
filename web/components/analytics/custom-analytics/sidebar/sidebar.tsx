@@ -160,8 +160,8 @@ export const CustomAnalyticsSidebar: React.FC<Props> = observer((props) => {
               (cycleId
                 ? cycleDetails?.created_at
                 : moduleId
-                  ? moduleDetails?.created_at
-                  : projectDetails?.created_at) ?? ""
+                ? moduleDetails?.created_at
+                : projectDetails?.created_at) ?? ""
             )}
           </div>
         )}
@@ -188,7 +188,7 @@ export const CustomAnalyticsSidebar: React.FC<Props> = observer((props) => {
         >
           <div className={cn(isProjectLevel ? "hidden md:block" : "")}>Refresh</div>
         </Button>
-        <Button variant="primary" prependIcon={<Download className="h-3.5 w-3.5" />} onClick={exportAnalytics}>
+        <Button variant="outline-primary" prependIcon={<Download className="h-3.5 w-3.5" />} onClick={exportAnalytics}>
           <div className={cn(isProjectLevel ? "hidden md:block" : "")}>Export as CSV</div>
         </Button>
       </div>

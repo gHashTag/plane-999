@@ -104,7 +104,7 @@ export const PageForm: React.FC<Props> = (props) => {
           <Button variant="neutral-primary" size="sm" onClick={handleClose} tabIndex={4}>
             Cancel
           </Button>
-          <Button variant="primary" size="sm" type="submit" loading={isSubmitting} tabIndex={5}>
+          <Button variant="outline-primary" size="sm" type="submit" loading={isSubmitting} tabIndex={5}>
             {pageStore ? (isSubmitting ? "Updating..." : "Update page") : isSubmitting ? "Creating..." : "Create Page"}
           </Button>
         </div>

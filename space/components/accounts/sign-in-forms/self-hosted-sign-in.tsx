@@ -129,7 +129,7 @@ export const SelfHostedSignInForm: React.FC<Props> = (props) => {
             )}
           />
         </div>
-        <Button type="submit" variant="primary" className="w-full" size="xl" loading={isSubmitting}>
+        <Button type="submit" variant="outline-primary" className="w-full" size="xl" loading={isSubmitting}>
           Continue
         </Button>
         <p className="text-xs text-onboarding-text-200">

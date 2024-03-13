@@ -470,13 +470,13 @@ export const PublishProjectModal: React.FC<Props> = observer((props) => {
                         {project.is_deployed ? (
                           <>
                             {isUpdateRequired && (
-                              <Button variant="primary" size="sm" type="submit" loading={isSubmitting}>
+                              <Button variant="outline-primary" size="sm" type="submit" loading={isSubmitting}>
                                 {isSubmitting ? "Updating..." : "Update settings"}
                               </Button>
                             )}
                           </>
                         ) : (
-                          <Button variant="primary" size="sm" type="submit" loading={isSubmitting}>
+                          <Button variant="outline-primary" size="sm" type="submit" loading={isSubmitting}>
                             {isSubmitting ? "Publishing..." : "Publish"}
                           </Button>
                         )}

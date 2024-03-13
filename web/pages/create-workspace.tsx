@@ -14,8 +14,9 @@ import DefaultLayout from "layouts/default-layout";
 // components
 // images
 import { NextPageWithLayout } from "lib/types";
-import BlackHorizontalLogo from "public/plane-logos/black-horizontal-with-blue-logo.svg";
-import WhiteHorizontalLogo from "public/plane-logos/white-horizontal-with-blue-logo.svg";
+import BluePlaneLogoWithoutText from "public/plane-logos/blue-without-text.png";
+// import BlackHorizontalLogo from "public/plane-logos/black-horizontal-with-blue-logo.svg";
+// import WhiteHorizontalLogo from "public/plane-logos/white-horizontal-with-blue-logo.svg";
 // types
 import { IWorkspace } from "@plane/types";
 
@@ -49,9 +50,9 @@ const CreateWorkspacePage: NextPageWithLayout = observer(() => {
           >
             <div className="h-[30px] w-[133px]">
               {theme === "light" ? (
-                <Image src={BlackHorizontalLogo} alt="DAO 999 NFT black logo" />
+                <Image src={BluePlaneLogoWithoutText} alt="DAO 999 NFT black logo" />
               ) : (
-                <Image src={WhiteHorizontalLogo} alt="DAO 999 NFT white logo" />
+                <Image src={BluePlaneLogoWithoutText} alt="DAO 999 NFT white logo" />
               )}
             </div>
           </Link>

@@ -153,14 +153,14 @@ export const LinkModal: FC<Props> = (props) => {
                     <Button variant="neutral-primary" size="sm" onClick={onClose}>
                       Cancel
                     </Button>
-                    <Button variant="primary" size="sm" type="submit" loading={isSubmitting}>
+                    <Button variant="outline-primary" size="sm" type="submit" loading={isSubmitting}>
                       {status
                         ? isSubmitting
                           ? "Updating Link..."
                           : "Update Link"
                         : isSubmitting
-                          ? "Adding Link..."
-                          : "Add Link"}
+                        ? "Adding Link..."
+                        : "Add Link"}
                     </Button>
                   </div>
                 </form>

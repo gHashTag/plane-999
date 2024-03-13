@@ -299,7 +299,7 @@ export const WorkspaceDetails: FC = observer(() => {
 
           {isAdmin && (
             <div className="flex items-center justify-between py-2">
-              <Button variant="primary" onClick={handleSubmit(onSubmit)} loading={isLoading}>
+              <Button variant="outline-primary" onClick={handleSubmit(onSubmit)} loading={isLoading}>
                 {isLoading ? "Updating..." : "Update Workspace"}
               </Button>
             </div>

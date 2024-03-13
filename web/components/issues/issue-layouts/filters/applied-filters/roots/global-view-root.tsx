@@ -126,7 +126,7 @@ export const GlobalViewsAppliedFiltersRoot = observer((props: Props) => {
       {!isDefaultView && !areFiltersEqual && isAuthorizedUser && (
         <>
           <div />
-          <Button variant="primary" onClick={handleUpdateView}>
+          <Button variant="outline-primary" onClick={handleUpdateView}>
             Update view
           </Button>
         </>

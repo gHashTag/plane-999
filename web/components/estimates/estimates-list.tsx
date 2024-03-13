@@ -73,7 +73,7 @@ export const EstimatesList: React.FC = observer(() => {
         <div className="col-span-12 space-y-5 sm:col-span-7">
           <div className="flex items-center gap-2">
             <Button
-              variant="primary"
+              variant="outline-primary"
               onClick={() => {
                 setEstimateFormOpen(true);
                 setEstimateToUpdate(undefined);

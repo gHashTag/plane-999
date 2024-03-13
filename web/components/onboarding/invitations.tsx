@@ -143,7 +143,7 @@ export const Invitations: React.FC<Props> = (props) => {
             })}
         </div>
 
-        <Button variant="primary" onClick={submitInvitations}>
+        <Button variant="outline-primary" onClick={submitInvitations}>
           {isJoiningWorkspaces ? "Joining..." : "Join your team"}
         </Button>
       </div>

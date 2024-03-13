@@ -69,7 +69,7 @@ const ApiTokensPage: NextPageWithLayout = observer(() => {
           <>
             <div className="flex items-center justify-between border-b border-custom-border-200 py-3.5">
               <h3 className="text-xl font-medium">API tokens</h3>
-              <Button variant="primary" onClick={() => setIsCreateTokenModalOpen(true)}>
+              <Button variant="outline-primary" onClick={() => setIsCreateTokenModalOpen(true)}>
                 Add API token
               </Button>
             </div>
@@ -83,7 +83,7 @@ const ApiTokensPage: NextPageWithLayout = observer(() => {
           <div className="flex h-full w-full flex-col">
             <div className="flex items-center justify-between gap-4 border-b border-custom-border-200 pb-3.5">
               <h3 className="text-xl font-medium">API tokens</h3>
-              <Button variant="primary" onClick={() => setIsCreateTokenModalOpen(true)}>
+              <Button variant="outline-primary" onClick={() => setIsCreateTokenModalOpen(true)}>
                 Add API token
               </Button>
             </div>

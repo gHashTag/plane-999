@@ -205,7 +205,9 @@ export const CycleIssuesHeader: React.FC = observer(() => {
                     className="ml-1.5 flex-shrink-0"
                     placement="bottom-start"
                   >
-                    {currentProjectCycleIds?.map((cycleId) => <CycleDropdownOption key={cycleId} cycleId={cycleId} />)}
+                    {currentProjectCycleIds?.map((cycleId) => (
+                      <CycleDropdownOption key={cycleId} cycleId={cycleId} />
+                    ))}
                   </CustomMenu>
                 }
               />
@@ -248,6 +250,7 @@ export const CycleIssuesHeader: React.FC = observer(() => {
                   Analytics
                 </Button>
                 <Button
+                  variant="outline-primary"
                   onClick={() => {
                     setTrackElement("Cycle issues page");
                     toggleCreateIssueModal(true, EIssuesStoreType.CYCLE);

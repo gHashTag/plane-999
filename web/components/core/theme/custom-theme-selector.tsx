@@ -213,7 +213,7 @@ export const CustomThemeSelector: React.FC = observer(() => {
         </div>
       </div>
       <div className="mt-5 flex justify-end gap-2">
-        <Button variant="primary" type="submit" loading={isSubmitting}>
+        <Button variant="outline-primary" type="submit" loading={isSubmitting}>
           {isSubmitting ? "Creating Theme..." : "Set Theme"}
         </Button>
       </div>

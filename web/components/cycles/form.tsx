@@ -163,7 +163,7 @@ export const CycleForm: React.FC<Props> = (props) => {
         <Button variant="neutral-primary" size="sm" onClick={handleClose} tabIndex={4}>
           Cancel
         </Button>
-        <Button variant="primary" size="sm" type="submit" loading={isSubmitting} tabIndex={5}>
+        <Button variant="outline-primary" size="sm" type="submit" loading={isSubmitting} tabIndex={5}>
           {data ? (isSubmitting ? "Updating" : "Update cycle") : isSubmitting ? "Creating" : "Create cycle"}
         </Button>
       </div>

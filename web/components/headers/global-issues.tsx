@@ -174,7 +174,12 @@ export const GlobalIssuesHeader: React.FC<Props> = observer((props) => {
             </>
           )}
           {isAuthorizedUser && (
-            <Button variant="primary" size="sm" prependIcon={<PlusIcon />} onClick={() => setCreateViewModal(true)}>
+            <Button
+              variant="outline-primary"
+              size="sm"
+              prependIcon={<PlusIcon />}
+              onClick={() => setCreateViewModal(true)}
+            >
               New View
             </Button>
           )}

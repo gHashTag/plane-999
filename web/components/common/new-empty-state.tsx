@@ -55,7 +55,7 @@ export const NewEmptyState: React.FC<Props> = ({
               <Button
                 className={`relative m-3 max-w-min !px-6 ${comicBox?.direction === "left" ? "flex-row-reverse" : ""}`}
                 size="lg"
-                variant="primary"
+                variant="outline-primary"
                 onClick={primaryButton.onClick}
                 disabled={disabled}
               >

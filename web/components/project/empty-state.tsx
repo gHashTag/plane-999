@@ -37,7 +37,7 @@ export const EmptyState: React.FC<Props> = ({
         {primaryButton && (
           <Button
             size="lg"
-            variant="primary"
+            variant="outline-primary"
             prependIcon={primaryButton.icon}
             onClick={primaryButton.onClick}
             disabled={disabled}

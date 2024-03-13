@@ -167,7 +167,7 @@ export const InstanceGithubConfigForm: FC<IInstanceGithubConfigForm> = (props) =
       </div>
       <div className="flex flex-col gap-1">
         <div className="flex items-center">
-          <Button variant="primary" onClick={handleSubmit(onSubmit)} loading={isSubmitting}>
+          <Button variant="outline-primary" onClick={handleSubmit(onSubmit)} loading={isSubmitting}>
             {isSubmitting ? "Saving..." : "Save changes"}
           </Button>
         </div>

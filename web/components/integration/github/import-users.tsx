@@ -41,7 +41,7 @@ export const GithubImportUsers: FC<Props> = ({ handleStepChange, users, setUsers
         <Button variant="neutral-primary" onClick={() => handleStepChange("repo-details")}>
           Back
         </Button>
-        <Button variant="primary" onClick={() => handleStepChange("import-confirm")} disabled={isInvalid}>
+        <Button variant="outline-primary" onClick={() => handleStepChange("import-confirm")} disabled={isInvalid}>
           Next
         </Button>
       </div>

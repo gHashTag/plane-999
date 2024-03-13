@@ -34,7 +34,7 @@ export const ProjectSettingLayout: FC<IProjectSettingLayout> = observer((props) 
       actionButton={
         //TODO: Create a new component called Button Link to handle such scenarios
         <Link href={`/${workspaceSlug}/projects/${projectId}/issues`}>
-          <Button variant="primary" size="md" prependIcon={<LayersIcon />}>
+          <Button variant="outline-primary" size="md" prependIcon={<LayersIcon />}>
             Go to issues
           </Button>
         </Link>

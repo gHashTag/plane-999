@@ -22,7 +22,7 @@ export const GithubImportConfirm: FC<Props> = ({ handleStepChange, watch }) => (
       <Button variant="neutral-primary" onClick={() => handleStepChange("import-users")}>
         Back
       </Button>
-      <Button variant="primary" type="submit">
+      <Button variant="outline-primary" type="submit">
         Confirm & Import
       </Button>
     </div>

@@ -212,7 +212,7 @@ export const ModuleForm: React.FC<Props> = (props) => {
         <Button variant="neutral-primary" size="sm" onClick={handleClose} tabIndex={7}>
           Cancel
         </Button>
-        <Button variant="primary" size="sm" type="submit" loading={isSubmitting} tabIndex={8}>
+        <Button variant="outline-primary" size="sm" type="submit" loading={isSubmitting} tabIndex={8}>
           {status ? (isSubmitting ? "Updating" : "Update module") : isSubmitting ? "Creating" : "Create module"}
         </Button>
       </div>

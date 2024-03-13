@@ -27,11 +27,11 @@ export const GithubAuth: React.FC<Props> = observer(({ workspaceIntegration, pro
   return (
     <div>
       {workspaceIntegration && workspaceIntegration?.id ? (
-        <Button variant="primary" disabled>
+        <Button variant="outline-primary" disabled>
           Successfully Connected
         </Button>
       ) : (
-        <Button variant="primary" onClick={startAuth} loading={isConnecting}>
+        <Button variant="outline-primary" onClick={startAuth} loading={isConnecting}>
           {isConnecting ? "Connecting..." : "Connect"}
         </Button>
       )}

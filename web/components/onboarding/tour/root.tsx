@@ -15,7 +15,7 @@ import IssuesTour from "public/onboarding/issues.webp";
 import ModulesTour from "public/onboarding/modules.webp";
 import PagesTour from "public/onboarding/pages.webp";
 import ViewsTour from "public/onboarding/views.webp";
-import PlaneWhiteLogo from "public/plane-logos/white-horizontal.svg";
+import WhiteLogo from "public/plane-logos/999-white-bg.svg";
 // constants
 
 type Props = {
@@ -93,7 +93,7 @@ export const TourRoot: React.FC<Props> = observer((props) => {
         <div className="h-3/4 w-4/5 overflow-hidden rounded-[10px] bg-custom-background-100 md:w-1/2 lg:w-2/5">
           <div className="h-full overflow-hidden">
             <div className="grid h-3/5 place-items-center bg-custom-primary-100">
-              <Image src={PlaneWhiteLogo} alt="DAO 999 NFT White Logo" />
+              <Image src={WhiteLogo} alt="DAO 999 NFT White Logo" className="h-[268px] w-auto max-w-[268px]" />
             </div>
             <div className="flex h-2/5 flex-col overflow-y-auto p-6">
               <h3 className="font-semibold sm:text-xl">
@@ -158,7 +158,7 @@ export const TourRoot: React.FC<Props> = observer((props) => {
                     </Button>
                   )}
                   {currentStep?.nextStep && (
-                    <Button variant="primary" onClick={() => setStep(currentStep.nextStep ?? "issues")}>
+                    <Button variant="outline-primary" onClick={() => setStep(currentStep.nextStep ?? "issues")}>
                       Next
                     </Button>
                   )}

@@ -168,7 +168,7 @@ const ChangePasswordPage: NextPageWithLayout = observer(() => {
           </div>
 
           <div className="flex items-center justify-between py-2">
-            <Button variant="primary" type="submit" loading={isSubmitting}>
+            <Button variant="outline-primary" type="submit" loading={isSubmitting}>
               {isSubmitting ? "Changing password..." : "Change password"}
             </Button>
           </div>

@@ -62,7 +62,7 @@ export const PagesHeader = observer(() => {
       {canUserCreatePage && (
         <div className="flex items-center gap-2">
           <Button
-            variant="primary"
+            variant="outline-primary"
             prependIcon={<Plus />}
             size="sm"
             onClick={() => {

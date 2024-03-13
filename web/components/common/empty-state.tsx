@@ -34,7 +34,7 @@ export const EmptyState: React.FC<Props> = ({
       <div className="flex items-center gap-4">
         {primaryButton && (
           <Button
-            variant="primary"
+            variant="outline-primary"
             prependIcon={primaryButton.icon}
             onClick={primaryButton.onClick}
             disabled={disabled}

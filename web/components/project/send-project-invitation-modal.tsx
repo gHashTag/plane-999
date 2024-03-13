@@ -142,8 +142,9 @@ export const SendProjectInvitationModal: React.FC<Props> = observer((props) => {
       if (!memberDetails?.member) return;
       return {
         value: `${memberDetails?.member.id}`,
-        query: `${memberDetails?.member.first_name} ${memberDetails?.member
-          .last_name} ${memberDetails?.member.display_name.toLowerCase()}`,
+        query: `${memberDetails?.member.first_name} ${
+          memberDetails?.member.last_name
+        } ${memberDetails?.member.display_name.toLowerCase()}`,
         content: (
           <div className="flex w-full items-center gap-2">
             <div className="flex-shrink-0 pt-0.5">
@@ -317,7 +318,7 @@ export const SendProjectInvitationModal: React.FC<Props> = observer((props) => {
                       <Button variant="neutral-primary" size="sm" onClick={handleClose}>
                         Cancel
                       </Button>
-                      <Button variant="primary" size="sm" type="submit" loading={isSubmitting}>
+                      <Button variant="outline-primary" size="sm" type="submit" loading={isSubmitting}>
                         {isSubmitting
                           ? `${fields && fields.length > 1 ? "Adding Members..." : "Adding Member..."}`
                           : `${fields && fields.length > 1 ? "Add Members" : "Add Member"}`}

@@ -306,14 +306,14 @@ export const CreateUpdateEstimateModal: React.FC<Props> = observer((props) => {
                       <Button variant="neutral-primary" size="sm" onClick={handleClose}>
                         Cancel
                       </Button>
-                      <Button variant="primary" size="sm" type="submit" loading={isSubmitting}>
+                      <Button variant="outline-primary" size="sm" type="submit" loading={isSubmitting}>
                         {data
                           ? isSubmitting
                             ? "Updating Estimate..."
                             : "Update Estimate"
                           : isSubmitting
-                            ? "Creating Estimate..."
-                            : "Create Estimate"}
+                          ? "Creating Estimate..."
+                          : "Create Estimate"}
                       </Button>
                     </div>
                   </form>

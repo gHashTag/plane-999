@@ -8,9 +8,9 @@ import { useApplication } from "hooks/store";
 // ui
 // images
 import instanceSetupDone from "public/instance-setup-done.webp";
-import PlaneBlackLogo from "public/plane-logos/black-horizontal-with-blue-logo.svg";
-import PlaneWhiteLogo from "public/plane-logos/white-horizontal-with-blue-logo.svg";
-
+// import PlaneBlackLogo from "public/plane-logos/black-horizontal-with-blue-logo.svg";
+// import PlaneWhiteLogo from "public/plane-logos/white-horizontal-with-blue-logo.svg";
+import BluePlaneLogoWithoutText from "public/plane-logos/blue-without-text.png";
 export const InstanceSetupDone = () => {
   // states
   const [isRedirecting, setIsRedirecting] = useState(false);
@@ -21,7 +21,7 @@ export const InstanceSetupDone = () => {
     instance: { fetchInstanceInfo },
   } = useApplication();
 
-  const planeLogo = resolvedTheme === "dark" ? PlaneWhiteLogo : PlaneBlackLogo;
+  // const planeLogo = resolvedTheme === "dark" ? PlaneWhiteLogo : PlaneBlackLogo;
 
   const redirectToGodMode = async () => {
     setIsRedirecting(true);
@@ -36,7 +36,7 @@ export const InstanceSetupDone = () => {
           <div className="relative flex h-full flex-col items-center overflow-y-auto rounded-t-md bg-onboarding-gradient-200 px-7 pb-8 sm:px-0">
             <div className="flex justify-center py-10">
               <div className="h-[30px]">
-                <Image src={planeLogo} className="h-full w-full" alt="DAO 999 NFT logo" />
+                <Image src={BluePlaneLogoWithoutText} className="h-full w-full" alt="DAO 999 NFT logo" />
               </div>
             </div>
 

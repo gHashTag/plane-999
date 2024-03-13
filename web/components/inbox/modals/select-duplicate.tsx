@@ -174,7 +174,7 @@ export const SelectDuplicateInboxIssueModal: React.FC<Props> = (props) => {
                       <Button variant="neutral-primary" size="sm" onClick={handleClose}>
                         Cancel
                       </Button>
-                      <Button variant="primary" size="sm" onClick={handleSubmit}>
+                      <Button variant="outline-primary" size="sm" onClick={handleSubmit}>
                         Mark as original
                       </Button>
                     </div>

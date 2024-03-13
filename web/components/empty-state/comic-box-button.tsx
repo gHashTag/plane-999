@@ -45,14 +45,14 @@ export const ComicBoxButton: React.FC<Props> = (props) => {
       <Popover.Button ref={setReferenceElement} onClick={onClick} disabled={disabled}>
         <div className={`flex items-center gap-2.5 ${getButtonStyling("primary", "lg", disabled)}`}>
           {icon}
-          <span className="leading-4">{label}</span>
+          <span className="text-black leading-4">{label}</span>
           <span className="relative h-2 w-2">
             <div
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className={`absolute bg-blue-300 right-0 z-10 h-2.5 w-2.5 animate-ping rounded-full`}
+              className={`absolute bg-black right-0 z-10 h-2.5 w-2.5 animate-ping rounded-full`}
             />
-            <div className={`absolute bg-blue-400/40 right-0 h-1.5 w-1.5 mt-0.5 mr-0.5 rounded-full`} />
+            <div className={`absolute bg-yellow-400/40 right-0 h-1.5 w-1.5 mt-0.5 mr-0.5 rounded-full`} />
           </span>
         </div>
       </Popover.Button>

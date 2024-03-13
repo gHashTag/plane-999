@@ -329,7 +329,7 @@ export const ProjectDetailsForm: FC<IProjectDetailsForm> = (props) => {
         </div>
         <div className="flex items-center justify-between py-2">
           <>
-            <Button variant="primary" type="submit" loading={isLoading} disabled={!isAdmin}>
+            <Button variant="outline-primary" type="submit" loading={isLoading} disabled={!isAdmin}>
               {isLoading ? "Updating..." : "Update project"}
             </Button>
             <span className="text-sm italic text-custom-sidebar-text-400">

@@ -320,7 +320,7 @@ export const CreateInboxIssueModal: React.FC<Props> = observer((props) => {
                       <Button variant="neutral-primary" size="sm" onClick={() => handleClose()}>
                         Discard
                       </Button>
-                      <Button variant="primary" size="sm" type="submit" loading={isSubmitting}>
+                      <Button variant="outline-primary" size="sm" type="submit" loading={isSubmitting}>
                         {isSubmitting ? "Adding Issue..." : "Add Issue"}
                       </Button>
                     </div>

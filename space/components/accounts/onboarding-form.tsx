@@ -175,7 +175,7 @@ export const OnBoardingForm: React.FC<Props> = observer(({ user }) => {
         </div>
       </div>
 
-      <Button variant="primary" type="submit" size="xl" disabled={!isValid} loading={isSubmitting}>
+      <Button variant="outline-primary" type="submit" size="xl" disabled={!isValid} loading={isSubmitting}>
         {isSubmitting ? "Updating..." : "Continue"}
       </Button>
     </form>

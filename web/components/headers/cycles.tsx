@@ -77,7 +77,7 @@ export const CyclesHeader: FC = observer(() => {
         {canUserCreateCycle && (
           <div className="flex items-center gap-3">
             <Button
-              variant="primary"
+              variant="outline-primary"
               size="sm"
               prependIcon={<Plus />}
               onClick={() => {

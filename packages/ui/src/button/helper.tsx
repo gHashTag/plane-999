@@ -37,13 +37,13 @@ enum buttonIconStyling {
 
 export const buttonStyling: IButtonStyling = {
   primary: {
-    default: `text-white bg-custom-primary-100`,
+    default: `text-black bg-custom-primary-100`,
     hover: `hover:bg-custom-primary-200`,
     pressed: `focus:text-custom-brand-40 focus:bg-custom-primary-200`,
     disabled: `cursor-not-allowed !bg-custom-primary-60 hover:bg-custom-primary-60`,
   },
   "accent-primary": {
-    default: `bg-custom-primary-10 text-custom-primary-100`,
+    default: `text-black bg-custom-primary-10 text-custom-primary-100`,
     hover: `hover:bg-custom-primary-20 hover:text-custom-primary-200`,
     pressed: `focus:bg-custom-primary-20`,
     disabled: `cursor-not-allowed !text-custom-primary-60`,

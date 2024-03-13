@@ -382,7 +382,7 @@ export const CreateProjectForm: FC<Props> = observer((props) => {
           <Button variant="neutral-primary" size="sm" onClick={handleClose} tabIndex={6}>
             Cancel
           </Button>
-          <Button variant="primary" type="submit" size="sm" loading={isSubmitting} tabIndex={7}>
+          <Button variant="outline-primary" type="submit" size="sm" loading={isSubmitting} tabIndex={7}>
             {isSubmitting ? "Creating" : "Create project"}
           </Button>
         </div>

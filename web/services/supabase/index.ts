@@ -1,5 +1,5 @@
 import { GeneralFormValues } from "@/components/instance/general-form";
-import { ILoginTokenResponse, IPasswordSignInData } from "@plane/types";
+import { ILoginTokenResponse, IPasswordSignInData, IUser } from "@plane/types";
 import { supabaseClient } from "helpers/999-utils/supabase/supabase";
 // services
 import { UserService } from "services/user.service";
@@ -43,4 +43,37 @@ const updateInstanceInfoSupabase = async (formData: GeneralFormValues) => {
   }
 };
 
-export { instanceAdminSignInSupabase, updateInstanceInfoSupabase };
+const getUserFromSupabase = async () => {
+  const response = await userService.currentUser();
+
+  try {
+    const { data, error } = await supabaseClient.from("users").select("*").eq("email", response.email);
+
+    if (error) {
+      console.error("error", error);
+      throw error;
+    }
+
+    return data;
+  } catch (error: any) {
+    throw error.response?.data ?? error;
+  }
+};
+
+const upadateUserSupabase = async (payload: Partial<IUser>) => {
+  const supabaseUser = await getUserFromSupabase();
+  try {
+    const { data, error } = await supabaseClient.from("users").update(payload).match({ email: supabaseUser[0].email });
+
+    if (error) {
+      console.error("error", error);
+      throw error;
+    }
+
+    return data;
+  } catch (error: any) {
+    throw error.response?.data ?? error;
+  }
+};
+
+export { instanceAdminSignInSupabase, updateInstanceInfoSupabase, getUserFromSupabase, upadateUserSupabase };

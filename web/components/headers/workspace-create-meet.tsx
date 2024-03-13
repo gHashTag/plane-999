@@ -22,7 +22,7 @@ export const WorkspaceCreateMeetHeader = observer(() => (
             }
           />
         </Breadcrumbs>
-        {/* <Crown className="h-3.5 w-3.5 text-amber-400" /> */}
+        <Crown className="h-3.5 w-3.5 text-amber-400" />
       </div>
     </div>
   </div>

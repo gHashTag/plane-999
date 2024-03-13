@@ -97,7 +97,7 @@ const IntegrationGuide = observer(() => {
                 <div className="flex-shrink-0">
                   <Link href={`/${workspaceSlug}/settings/imports?provider=${service.provider}`}>
                     <span>
-                      <Button variant="primary">{service.type}</Button>
+                      <Button variant="outline-primary">{service.type}</Button>
                     </span>
                   </Link>
                 </div>

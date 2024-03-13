@@ -97,7 +97,7 @@ export const WebhookForm: FC<Props> = observer((props) => {
               Discard
             </Button>
             {!webhookSecretKey && (
-              <Button type="submit" variant="primary" loading={isSubmitting}>
+              <Button type="submit" variant="outline-primary" loading={isSubmitting}>
                 {isSubmitting ? "Creating..." : "Create"}
               </Button>
             )}
