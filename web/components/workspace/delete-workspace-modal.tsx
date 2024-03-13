@@ -12,6 +12,7 @@ import { WORKSPACE_DELETED } from "constants/event-tracker";
 import { useEventTracker, useWorkspace } from "hooks/store";
 // types
 import type { IWorkspace } from "@plane/types";
+import { deleteWorkspaceSupabase } from "@/services/supabase";
 
 type Props = {
   isOpen: boolean;
@@ -53,6 +54,7 @@ export const DeleteWorkspaceModal: React.FC<Props> = observer((props) => {
 
   const onSubmit = async () => {
     if (!data || !canDelete) return;
+    await deleteWorkspaceSupabase(data.slug);
 
     await deleteWorkspace(data.slug)
       .then(() => {

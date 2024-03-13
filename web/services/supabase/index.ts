@@ -76,4 +76,25 @@ const upadateUserSupabase = async (payload: Partial<IUser>) => {
   }
 };
 
-export { instanceAdminSignInSupabase, updateInstanceInfoSupabase, getUserFromSupabase, upadateUserSupabase };
+const deleteWorkspaceSupabase = async (slug: string) => {
+  try {
+    const { data, error } = await supabaseClient.from("workspaces").delete().match({ name: slug });
+
+    if (error) {
+      console.error("error", error);
+      throw error;
+    }
+
+    return data;
+  } catch (error: any) {
+    throw error.response?.data ?? error;
+  }
+};
+
+export {
+  instanceAdminSignInSupabase,
+  updateInstanceInfoSupabase,
+  getUserFromSupabase,
+  upadateUserSupabase,
+  deleteWorkspaceSupabase,
+};
