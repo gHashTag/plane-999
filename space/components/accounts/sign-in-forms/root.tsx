@@ -114,7 +114,7 @@ export const SignInRoot = observer(() => {
         !OAUTH_HIDDEN_STEPS.includes(signInStep) &&
         signInStep !== ESignInSteps.CREATE_PASSWORD &&
         signInStep !== ESignInSteps.PASSWORD && <OAuthOptions handleSignInRedirection={handleRedirection} />}
-      <LatestFeatureBlock />
+      {/* <LatestFeatureBlock /> */}
     </>
   );
 });

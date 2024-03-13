@@ -1,5 +1,5 @@
-export const SITE_NAME = "DAO 999 NFT | roject management toolmanagement tool.";
-export const SITE_TITLE = "DAO 999 NFT | roject management toolmanagement tool.";
+export const SITE_NAME = "DAO 999 NFT | project management toolmanagement tool.";
+export const SITE_TITLE = "DAO 999 NFT | project management toolmanagement tool.";
 export const SITE_DESCRIPTION =
   "Open-source project management tool to manage issues, sprints, and product roadmaps with peace of mind.";
 export const SITE_KEYWORDS =

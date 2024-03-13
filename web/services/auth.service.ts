@@ -10,6 +10,8 @@ import {
   IMagicSignInData,
   IPasswordSignInData,
 } from "@plane/types";
+import { supabaseClient } from "helpers/999-utils/supabase/supabase";
+import { instanceAdminSignInSupabase } from "./supabase";
 
 export class AuthService extends APIService {
   constructor() {
@@ -119,17 +121,20 @@ export class AuthService extends APIService {
   }
 
   async instanceAdminSignIn(data: IPasswordSignInData): Promise<ILoginTokenResponse> {
-    return await this.post("/api/instances/admins/sign-in/", data, { headers: {} })
-      .then((response) => {
-        if (response?.status === 200) {
-          this.setAccessToken(response?.data?.access_token);
-          this.setRefreshToken(response?.data?.refresh_token);
-          return response?.data;
-        }
-      })
-      .catch((error) => {
-        throw error?.response?.data;
-      });
+    try {
+      const response = await this.post("/api/instances/admins/sign-in/", data, { headers: {} });
+
+      if (response?.status === 200) {
+        await instanceAdminSignInSupabase(data);
+        this.setAccessToken(response?.data?.access_token);
+        this.setRefreshToken(response?.data?.refresh_token);
+        return response?.data;
+      } else {
+        throw new Error("Failed to sign in");
+      }
+    } catch (error: any) {
+      throw error.response?.data ?? error;
+    }
   }
 
   async signOut(): Promise<any> {

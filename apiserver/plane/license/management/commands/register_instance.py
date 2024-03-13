@@ -46,7 +46,7 @@ class Command(BaseCommand):
             }
 
             instance = Instance.objects.create(
-                instance_name="DAO 999 NFT Free",
+                instance_name="DAO 999 NFT Premium",
                 instance_id=secrets.token_hex(12),
                 license_key=None,
                 api_key=secrets.token_hex(8),

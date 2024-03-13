@@ -111,19 +111,19 @@ export const SignInRoot = observer(() => {
         (signInStep === ESignInSteps.EMAIL || (!isSmtpConfigured && signInStep === ESignInSteps.PASSWORD)) && (
           <>
             <OAuthOptions handleSignInRedirection={handleRedirection} type="sign_in" />
-            <p className="text-xs text-onboarding-text-300 text-center mt-6">
+            <p className="mt-6 text-center text-xs text-onboarding-text-300">
               Don{"'"}t have an account?{" "}
               <Link
                 href="/accounts/sign-up"
                 onClick={() => captureEvent(NAVIGATE_TO_SIGNUP, {})}
-                className="text-custom-primary-100 font-medium underline"
+                className="font-medium text-custom-primary-100 underline"
               >
                 Sign up
               </Link>
             </p>
           </>
         )}
-      <LatestFeatureBlock />
+      {/* <LatestFeatureBlock /> */}
     </>
   );
 });

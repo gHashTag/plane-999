@@ -134,7 +134,7 @@ const ForgotPasswordPage: NextPageWithLayout = () => {
                 </Button>
               </form>
             </div>
-            <LatestFeatureBlock />
+            {/* <LatestFeatureBlock /> */}
           </div>
         </div>
       </div>

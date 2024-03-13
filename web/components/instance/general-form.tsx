@@ -6,6 +6,7 @@ import { Button, Input, TOAST_TYPE, setToast } from "@plane/ui";
 import { IInstance, IInstanceAdmin } from "@plane/types";
 // hooks
 import { useApplication } from "hooks/store";
+import { updateInstanceInfoSupabase } from "@/services/supabase";
 
 export interface IInstanceGeneralForm {
   instance: IInstance;
@@ -35,7 +36,7 @@ export const InstanceGeneralForm: FC<IInstanceGeneralForm> = (props) => {
 
   const onSubmit = async (formData: GeneralFormValues) => {
     const payload: Partial<GeneralFormValues> = { ...formData };
-
+    await updateInstanceInfoSupabase(formData);
     await instanceStore
       .updateInstanceInfo(payload)
       .then(() =>
