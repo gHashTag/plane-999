@@ -61,12 +61,12 @@ export const WorkspaceSidebarMenu = observer(() => {
                     {
                       <link.Icon
                         className={cn("h-4 w-4", {
-                          "rotate-180": link.key === "active-cycles",
+                          "rotate-180": link.key === "create-meet",
                         })}
                       />
                     }
                     <p className="leading-5">{!themeStore?.sidebarCollapsed && link.label}</p>
-                    {!themeStore?.sidebarCollapsed && link.key === "active-cycles" && (
+                    {!themeStore?.sidebarCollapsed && link.key === "create-meet" && (
                       <Crown className="h-3.5 w-3.5 text-amber-400" />
                     )}
                   </div>

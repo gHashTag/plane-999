@@ -17,7 +17,7 @@ const LandingCards: React.FC<CardsProps> = ({ children, title, type, className, 
 
   return (
     <div
-      className={cn("border-custom-1 flex w-full rounded-lg border p-6", className)}
+      className={cn("flex w-full rounded-lg border border-yellow-500 p-6", className)}
       onClick={() => {
         if (url) push(url);
       }}
