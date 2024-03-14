@@ -26,15 +26,15 @@ const getUserFromSupabase = async () => {
 // Register a new administrator
 const instanceAdminSignInSupabase = async (data: IPasswordSignInData) => {
   try {
-    const { error } = await supabaseClient.from("users").insert([
+    const { data: dataUser, error } = await supabaseClient.from("users").insert([
       {
         email: data?.email,
         admin_email: data?.email,
       },
     ]);
-
+    console.log("dataUser", dataUser);
     if (error) {
-      console.log("error", error);
+      console.log("instanceAdminSignInSupabase error", error);
       throw error;
     }
   } catch (error: any) {

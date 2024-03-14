@@ -29,8 +29,8 @@ export const WorkspaceCreateMeet = observer(({ recordings }: { recordings: Recor
   return (
     <div className="flex flex-col gap-10 pt-8 px-8 rounded-xl h-full vertical-scrollbar scrollbar-lg">
       <div
-        className={cn("flex item-center justify-between rounded-xl min-h-[25rem]", {
-          "bg-gradient-to-l from-[#CFCFCF]  to-[#212121]": currentUser?.theme.theme === "dark",
+        className={cn("flex items-center justify-between rounded-xl min-h-[25rem]", {
+          "bg-gradient-to-l from-[#CFCFCF] to-[#212121]": currentUser?.theme.theme === "dark",
           "bg-gradient-to-l from-[#3b5ec6] to-[#f5f7fe]": currentUser?.theme.theme === "light",
         })}
       >
@@ -42,11 +42,10 @@ export const WorkspaceCreateMeet = observer(({ recordings }: { recordings: Recor
           </div>
         </LandingCards>
       </div>
+      <div style={{ marginBottom: "20px" }} />
       {recordings.map((recording, index) => (
-        <div key={index} className="flex items-center justify-between p-4 border-b border-gray-200">
-          <span className="text-lg font-medium">{recording.room_name}</span>
+        <div key={index} className="items-center justify-between p-4 border-b border-gray-200">
           <div className="flex items-center space-x-2">
-            <span className="text-sm text-gray-500">{recording.duration} min</span>
             <a
               href={recording.summary_json_presigned_url}
               target="_blank"
@@ -63,6 +62,7 @@ export const WorkspaceCreateMeet = observer(({ recordings }: { recordings: Recor
             >
               Transcript
             </a>
+            <span className="text-sm text-gray-500">{recording.duration} min</span>
           </div>
         </div>
       ))}
