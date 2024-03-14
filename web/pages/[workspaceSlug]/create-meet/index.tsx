@@ -13,10 +13,12 @@ import { NextPageWithLayout } from "lib/types";
 
 import { useRouter } from "next/navigation";
 import { getAllRecordings } from "@/services/supabase/edge-functions";
+import { useWorkspaces } from "@/services/supabase/useWorkspaces";
+import { RecordingsArray } from "@/services/supabase/typesSupabase";
 
 const WorkspaceCreateMeetPage: NextPageWithLayout = observer(() => {
-  const { currentWorkspace } = useWorkspace();
-  const [recordings, setRecordings] = useState([]);
+  const { room_id, currentWorkspace } = useWorkspaces();
+  const [recordings, setRecordings] = useState<RecordingsArray>([]);
   console.log(recordings, "recordings");
   // derived values
   const pageTitle = currentWorkspace?.name ? `${currentWorkspace?.name} - CreateMeet` : undefined;
@@ -25,8 +27,12 @@ const WorkspaceCreateMeetPage: NextPageWithLayout = observer(() => {
     if (currentWorkspace) {
       const { slug } = currentWorkspace;
       (async () => {
-        const responseData = await getAllRecordings(slug);
-        setRecordings(responseData.data);
+        if (room_id && slug) {
+          const responseData = await getAllRecordings(room_id, slug);
+          if (responseData) {
+            setRecordings(responseData);
+          }
+        }
       })();
     }
   }, [currentWorkspace]);
@@ -34,7 +40,7 @@ const WorkspaceCreateMeetPage: NextPageWithLayout = observer(() => {
   return (
     <>
       <PageHead title={pageTitle} />
-      <WorkspaceCreateMeet />
+      <WorkspaceCreateMeet recordings={recordings} />
     </>
   );
 });

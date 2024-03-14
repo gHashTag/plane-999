@@ -17,7 +17,7 @@ const Rooms: NextPageWithLayout = observer(() => {
   const router = useRouter();
   const { currentUser } = useUser();
   console.log(currentUser, "currentUser");
-  const { roomId } = router.query as { roomId: string };
+  const { code } = router.query as { code: string };
 
   const [token, setToken] = useState<string | undefined>(undefined);
   const isConnected = useHMSStore(selectIsConnectedToRoom);
@@ -26,9 +26,9 @@ const Rooms: NextPageWithLayout = observer(() => {
   useEffect(() => {
     const fetchToken = async () => {
       try {
-        if (typeof roomId === "string") {
+        if (typeof code === "string") {
           const authToken = await hmsActions.getAuthTokenByRoomCode({
-            roomCode: roomId,
+            roomCode: code,
           });
           setToken(authToken);
         } else {
@@ -40,7 +40,7 @@ const Rooms: NextPageWithLayout = observer(() => {
     };
 
     fetchToken();
-  }, [hmsActions, roomId]);
+  }, [hmsActions, code]);
 
   useEffect(() => {
     const handleUnload = async () => {
@@ -65,7 +65,7 @@ const Rooms: NextPageWithLayout = observer(() => {
       {token && (
         <HMSPrebuilt
           authToken={token}
-          roomCode={roomId}
+          roomCode={code}
           options={{ userName: currentUser?.first_name + " " + currentUser?.last_name }}
         />
       )}

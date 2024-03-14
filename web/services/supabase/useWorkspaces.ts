@@ -9,7 +9,8 @@ import { getUserFromSupabase } from "./auth";
 const userService = new UserService();
 
 const useWorkspaces = () => {
-  const [roomId, setRoomId] = useState(null);
+  const [code, setCode] = useState(null);
+  const [room_id, setRoomId] = useState(null);
   const [role, setRole] = useState("host");
   const { currentWorkspace } = useWorkspace();
 
@@ -32,10 +33,12 @@ const useWorkspaces = () => {
         }
 
         if (data) {
-          const code = data[0].codes.data[0].code;
+          const code100ms = data[0].codes.data[0].code;
+          const roomId100ms = data[0].codes.data[0].room_id;
           const roleName = data[0].codes.data[0].role;
-          setRoomId(code);
+          setCode(code100ms);
           setRole(roleName);
+          setRoomId(roomId100ms);
         }
       } catch (error: any) {
         console.error(error.response?.data ?? error);
@@ -45,7 +48,7 @@ const useWorkspaces = () => {
     fetchRoomId();
   }, [currentWorkspace]);
 
-  return { roomId, role };
+  return { code, role, room_id, currentWorkspace };
 };
 
 export { useWorkspaces };

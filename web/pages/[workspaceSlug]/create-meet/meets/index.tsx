@@ -11,7 +11,7 @@ import { useWorkspaces } from "@/services/supabase/useWorkspaces";
 import { observer } from "mobx-react";
 
 const Meets: NextPageWithLayout = () => {
-  const { roomId, role } = useWorkspaces();
+  const { code, role } = useWorkspaces();
   // const roomId = "nur-zlme-mpt";
 
   const router = useRouter();
@@ -20,13 +20,13 @@ const Meets: NextPageWithLayout = () => {
   useEffect(() => {
     const setRoute = async () => {
       try {
-        if (currentWorkspace?.slug && roomId) {
+        if (currentWorkspace?.slug && code) {
           router.push(
             {
-              pathname: `/${currentWorkspace.slug}/create-meet/meets/[roomId]`,
-              query: { roomId },
+              pathname: `/${currentWorkspace.slug}/create-meet/meets/[code]`,
+              query: { code },
             },
-            `/${currentWorkspace.slug}/create-meet/meets/${roomId}`
+            `/${currentWorkspace.slug}/create-meet/meets/${code}`
           );
         }
       } catch (error) {
@@ -34,7 +34,7 @@ const Meets: NextPageWithLayout = () => {
       }
     };
     setRoute();
-  }, [roomId, currentWorkspace?.slug, router]);
+  }, [code, currentWorkspace?.slug, router]);
 };
 
 Meets.getLayout = function getLayout(page: ReactElement) {

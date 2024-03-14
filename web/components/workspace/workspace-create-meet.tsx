@@ -3,12 +3,13 @@ import { observer } from "mobx-react";
 // helper
 import { cn } from "helpers/common.helper";
 // hooks
-import { useUser, useWorkspace} from "hooks/store";
+import { useUser, useWorkspace } from "hooks/store";
 import { useRouter } from "next/navigation";
 import LandingCards from "@components/999/LandingCards/LandingCards";
 import SubCard from "@/components/999/LandingCards/SubCard";
+import { RecordingsArray } from "@/services/supabase/typesSupabase";
 
-export const WorkspaceCreateMeet = observer(() => {
+export const WorkspaceCreateMeet = observer(({ recordings }: { recordings: RecordingsArray }) => {
   // store hooks
   const { currentUser } = useUser();
   const { currentWorkspace } = useWorkspace();
@@ -40,7 +41,31 @@ export const WorkspaceCreateMeet = observer(() => {
             <SubCard title="Token-gated Room" img="Token-gated Room.png" onClick={getTokenGated} />
           </div>
         </LandingCards>
+      </div>
+      {recordings.map((recording, index) => (
+        <div key={index} className="flex items-center justify-between p-4 border-b border-gray-200">
+          <span className="text-lg font-medium">{recording.room_name}</span>
+          <div className="flex items-center space-x-2">
+            <span className="text-sm text-gray-500">{recording.duration} min</span>
+            <a
+              href={recording.summary_json_presigned_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              Summary
+            </a>
+            <a
+              href={recording.transcript_json_presigned_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              Transcript
+            </a>
+          </div>
         </div>
+      ))}
     </div>
   );
 });

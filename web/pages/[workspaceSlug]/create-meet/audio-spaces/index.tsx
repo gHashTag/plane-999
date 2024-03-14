@@ -10,9 +10,10 @@ import { NextPageWithLayout } from "lib/types";
 // layouts
 import { useWorkspace } from "hooks/store";
 import { AppLayout } from "layouts/app-layout";
+import { useWorkspaces } from "@/services/supabase/useWorkspaces";
 
 const Meets: NextPageWithLayout = () => {
-  const roomId = "gcy-elue-bot";
+  const { code, role } = useWorkspaces();
   const router = useRouter();
   const { currentWorkspace } = useWorkspace();
 
@@ -20,8 +21,8 @@ const Meets: NextPageWithLayout = () => {
     const setRoute = async () => {
       try {
         router.push({
-          pathname: `/${currentWorkspace?.slug}/create-meet/audio-spaces/[roomId]`,
-          query: { roomId },
+          pathname: `/${currentWorkspace?.slug}/create-meet/audio-spaces/[code]`,
+          query: { code },
         });
       } catch (error) {
         console.error("Error", error);
