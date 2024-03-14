@@ -1,10 +1,28 @@
 import { GeneralFormValues } from "@/components/instance/general-form";
 import { ILoginTokenResponse, IPasswordSignInData, IUser } from "@plane/types";
-import { supabaseClient } from "@/services/supabase/999-utils/supabase/supabase";
+import { supabaseClient } from "@/services/supabase/supabase";
 // services
 import { UserService } from "services/user.service";
 
 const userService = new UserService();
+
+const getUserFromSupabase = async () => {
+  const response = await userService.currentUser();
+
+  try {
+    const { data, error } = await supabaseClient.from("users").select("*").eq("email", response.email);
+
+    if (error) {
+      console.error("error", error);
+      throw error;
+    }
+
+    return data;
+  } catch (error: any) {
+    throw error.response?.data ?? error;
+  }
+};
+
 // Register a new administrator
 const instanceAdminSignInSupabase = async (data: IPasswordSignInData) => {
   try {
@@ -31,23 +49,6 @@ const updateInstanceInfoSupabase = async (formData: GeneralFormValues) => {
       .from("users")
       .update({ instance_name: formData.instance_name })
       .match({ email: response.email });
-
-    if (error) {
-      console.error("error", error);
-      throw error;
-    }
-
-    return data;
-  } catch (error: any) {
-    throw error.response?.data ?? error;
-  }
-};
-
-const getUserFromSupabase = async () => {
-  const response = await userService.currentUser();
-
-  try {
-    const { data, error } = await supabaseClient.from("users").select("*").eq("email", response.email);
 
     if (error) {
       console.error("error", error);

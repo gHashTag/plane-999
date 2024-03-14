@@ -38,7 +38,7 @@ import { FileService } from "services/file.service";
 // types
 import type { IUser } from "@plane/types";
 // supabase
-import { upadateUserSupabase } from "@/services/supabase";
+import { upadateUserSupabase } from "@/services/supabase/auth";
 
 const defaultValues: Partial<IUser> = {
   avatar: "",

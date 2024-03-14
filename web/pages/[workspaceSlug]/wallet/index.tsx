@@ -2,8 +2,6 @@ import { ReactElement, useEffect, useState } from "react";
 import { observer } from "mobx-react";
 // components
 import { PageHead } from "components/core";
-import { WorkspaceCreateMeetHeader } from "components/headers";
-import { WorkspaceCreateMeet } from "components/workspace";
 // layouts
 import { useWorkspace } from "hooks/store";
 import { AppLayout } from "layouts/app-layout";
@@ -13,13 +11,15 @@ import { NextPageWithLayout } from "lib/types";
 
 import { useRouter } from "next/navigation";
 import { getAllRecordings } from "@/services/supabase/edge-functions";
+import { Wallet } from "lucide-react";
+import { WorkspaceWalletHeader } from "@/components/headers/workspace-wallet";
 
-const WorkspaceCreateMeetPage: NextPageWithLayout = observer(() => {
+const WorkspaceWalletPage: NextPageWithLayout = observer(() => {
   const { currentWorkspace } = useWorkspace();
   const [recordings, setRecordings] = useState([]);
   console.log(recordings, "recordings");
   // derived values
-  const pageTitle = currentWorkspace?.name ? `${currentWorkspace?.name} - CreateMeet` : undefined;
+  const pageTitle = currentWorkspace?.name ? `${currentWorkspace?.name} - Wallet` : undefined;
 
   useEffect(() => {
     if (currentWorkspace) {
@@ -34,13 +34,13 @@ const WorkspaceCreateMeetPage: NextPageWithLayout = observer(() => {
   return (
     <>
       <PageHead title={pageTitle} />
-      <WorkspaceCreateMeet />
+      <span>Wallet</span>
     </>
   );
 });
 
-WorkspaceCreateMeetPage.getLayout = function getLayout(page: ReactElement) {
-  return <AppLayout header={<WorkspaceCreateMeetHeader />}>{page}</AppLayout>;
+WorkspaceWalletPage.getLayout = function getLayout(page: ReactElement) {
+  return <AppLayout header={<WorkspaceWalletHeader />}>{page}</AppLayout>;
 };
 
-export default WorkspaceCreateMeetPage;
+export default WorkspaceWalletPage;

@@ -11,7 +11,7 @@ import { WorkspaceService } from "services/workspace.service";
 import { IUser, IWorkspace, TOnboardingSteps } from "@plane/types";
 
 // helpers
-import { createRoom } from "@/services/supabase/999-utils/supabase/create-room";
+import { createRoom } from "@/services/supabase/edge-functions";
 
 type Props = {
   stepChange: (steps: Partial<TOnboardingSteps>) => Promise<void>;
@@ -40,9 +40,10 @@ export const Workspace: React.FC<Props> = (props) => {
   const handleCreateWorkspace = async (formData: IWorkspace) => {
     const id = currentUser?.id;
     const email = currentUser?.email;
+    const slug = formData?.name;
 
-    if (id && email) {
-      const response = await createRoom(id, formData.name, email);
+    if (id && email && slug) {
+      const response = await createRoom(id, slug, email);
       if (response.error) {
         setToast({
           type: TOAST_TYPE.ERROR,

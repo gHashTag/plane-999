@@ -6,7 +6,7 @@ import { Button, Input, TOAST_TYPE, setToast } from "@plane/ui";
 import { IInstance, IInstanceAdmin } from "@plane/types";
 // hooks
 import { useApplication } from "hooks/store";
-import { updateInstanceInfoSupabase } from "@/services/supabase";
+import { updateInstanceInfoSupabase } from "@/services/supabase/auth";
 
 export interface IInstanceGeneralForm {
   instance: IInstance;

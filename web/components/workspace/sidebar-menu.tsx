@@ -66,9 +66,10 @@ export const WorkspaceSidebarMenu = observer(() => {
                       />
                     }
                     <p className="leading-5">{!themeStore?.sidebarCollapsed && link.label}</p>
-                    {!themeStore?.sidebarCollapsed && link.key === "create-meet" && (
-                      <Crown className="h-3.5 w-3.5 text-amber-400" />
-                    )}
+                    {!themeStore?.sidebarCollapsed &&
+                      (link.key === "wallet" || link.key === "marketplaces" || link.key === "create-meet") && (
+                        <Crown className="h-3.5 w-3.5 text-amber-400" />
+                      )}
                   </div>
                 </Tooltip>
               </span>

@@ -19,7 +19,7 @@ import { FileService } from "services/file.service";
 import { IUser } from "@plane/types";
 
 // supabase
-import { upadateUserSupabase } from "@/services/supabase";
+import { upadateUserSupabase } from "@/services/supabase/auth";
 
 const defaultValues: Partial<IUser> = {
   first_name: "",

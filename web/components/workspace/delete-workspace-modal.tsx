@@ -12,7 +12,7 @@ import { WORKSPACE_DELETED } from "constants/event-tracker";
 import { useEventTracker, useWorkspace } from "hooks/store";
 // types
 import type { IWorkspace } from "@plane/types";
-import { deleteWorkspaceSupabase } from "@/services/supabase";
+import { deleteWorkspaceSupabase } from "@/services/supabase/auth";
 
 type Props = {
   isOpen: boolean;

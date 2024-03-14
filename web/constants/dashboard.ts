@@ -1,7 +1,15 @@
 import { linearGradientDef } from "@nivo/core";
 // assets
 import { BarChart2, Briefcase, CheckCircle, Home } from "lucide-react";
-import { ContrastIcon } from "@plane/ui";
+import {
+  CompletedGroupIcon,
+  ContrastIcon,
+  LayerStackIcon,
+  ModuleBacklogIcon,
+  RunningIcon,
+  StateGroupIcon,
+  UserGroupIcon,
+} from "@plane/ui";
 import { Props } from "components/icons/types";
 import CompletedIssuesDark from "public/empty-state/dashboard/dark/completed-issues.svg";
 import OverdueIssuesDark from "public/empty-state/dashboard/dark/overdue-issues.svg";
@@ -295,6 +303,22 @@ export const SIDEBAR_MENU_ITEMS: {
     access: EUserWorkspaceRoles.GUEST,
     highlight: (pathname: string, baseUrl: string) => pathname === `${baseUrl}/create-meet`,
     Icon: ContrastIcon,
+  },
+  {
+    key: "wallet",
+    label: "Wallet",
+    href: `/wallet`,
+    access: EUserWorkspaceRoles.GUEST,
+    highlight: (pathname: string, baseUrl: string) => pathname === `${baseUrl}/wallet`,
+    Icon: LayerStackIcon,
+  },
+  {
+    key: "marketplaces",
+    label: "Marketplaces",
+    href: `/marketplaces`,
+    access: EUserWorkspaceRoles.GUEST,
+    highlight: (pathname: string, baseUrl: string) => pathname === `${baseUrl}/marketplaces`,
+    Icon: UserGroupIcon,
   },
   // {
   //   key: "active-cycles",

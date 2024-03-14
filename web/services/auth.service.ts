@@ -11,7 +11,7 @@ import {
   IPasswordSignInData,
 } from "@plane/types";
 
-import { instanceAdminSignInSupabase } from "./supabase";
+import { instanceAdminSignInSupabase } from "./supabase/auth";
 
 export class AuthService extends APIService {
   constructor() {
