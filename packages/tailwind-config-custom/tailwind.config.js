@@ -1,4 +1,5 @@
 const convertToRGB = (variableName) => `rgba(var(${variableName}))`;
+const { nextui } = require("@nextui-org/react");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -13,6 +14,7 @@ module.exports = {
       "./ui/**/*.tsx",
       "../packages/ui/**/*.{js,ts,jsx,tsx}",
       "../packages/editor/**/src/**/*.{js,ts,jsx,tsx}",
+      "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
     ],
   },
   theme: {
@@ -410,5 +412,9 @@ module.exports = {
       custom: ["Inter", "sans-serif"],
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+    nextui(),
+  ],
 };

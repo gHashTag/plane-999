@@ -1,5 +1,5 @@
 "use client";
-import { ReactElement } from "react";
+import { ReactElement, useEffect } from "react";
 import Head from "next/head";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
@@ -16,16 +16,28 @@ import { SITE_TITLE } from "constants/seo-variables";
 import { StoreProvider } from "contexts/store-context";
 import { NextUIProvider } from "@nextui-org/react";
 import { HMSRoomProvider } from "@100mslive/react-sdk";
-
+import { authenticateUser, initWeb3Auth, subscribeToEvents } from "services/utils/auth";
 import { AppProvider } from "lib/app-provider";
 // types
 import { NextPageWithLayout } from "lib/types";
+import { useWeb3Auth } from "@/hooks/999/useWeb3Auth";
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const { setLoggedIn } = useWeb3Auth();
+
+  useEffect(() => {
+    initWeb3Auth();
+    const unsubscribe = subscribeToEvents(async () => {
+      await authenticateUser();
+      setLoggedIn(true);
+    });
+    return unsubscribe;
+  }, []);
+
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout ?? ((page: ReactElement) => page);
 
